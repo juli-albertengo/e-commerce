@@ -1,0 +1,34 @@
+@import "../scss/bootstrap-reboot";
+@import "../scss/bootstrap";
+@import "../scss/bootstrap-grid";
+
+.navbar{
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-light;
+    @extend .bg-light;
+    
+    .navbar__brand{
+        @extend .navbar-brand;
+    }
+
+    .navbar__toggler{
+        @extend .navbar-toggler;
+        .navbar__toggler__icon{
+            @extend .navbar-toggler-icon;
+        }
+    }
+
+    .navbar__collapseDiv{
+        @extend .collapse;
+        @extend .navbar-collapse;
+
+        .navbar__innerDiv{
+            @extend .navbar-nav;
+            
+            .navbar__innerDiv__link{
+                @extend .nav-link;
+            }
+        }
+    }
+}

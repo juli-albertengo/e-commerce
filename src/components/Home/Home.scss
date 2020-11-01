@@ -1,0 +1,9 @@
+@import "../scss/bootstrap-reboot";
+@import "../scss/bootstrap";
+@import "../scss/bootstrap-grid";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.greeting{
+    font-family: 'Roboto', sans-serif;
+    @extend .m-5;
+}

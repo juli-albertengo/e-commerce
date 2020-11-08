@@ -1,12 +1,12 @@
-import Navbar from './components/Navbar/Navbar'
-import Home from './components/Home/Home'
+import './App.scss';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Home from './containers/Home'
 
 function App() {
   return (
-    <header>
-      <Navbar/>
+    <>
       <Home greeting='Guten Tag :)'/>
-    </header>
+    </>
   );
 }
 

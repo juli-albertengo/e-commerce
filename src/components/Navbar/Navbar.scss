@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$fuente: 'Roboto Mono', monospace;
+
+.navbar{
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-dark;
+    background-color: $negro;
+    font-size: 1.2rem;
+
+    .navbarDiv{
+        @extend .collapse;
+        @extend .navbar-collapse;
+
+        .navbarDiv__ul{
+            @extend .navbar-nav;
+            @extend .mr-auto;
+
+            .nav-item{
+                @extend .mx-2;
+                .nav-link{
+                    font-family: $fuente;
+                    color: $blanco;
+                }
+            }
+        }
+
+        .navbar-text{
+            @extend .px-2;
+            font-family: $fuente;
+            color: $blanco;
+        }
+    }
+}
+
+

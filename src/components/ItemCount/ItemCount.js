@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import "./ItemCount.scss"
 
 function ItemCount({min, max, onAdd}) {
     const [counter, setCounter] = useState(0);
@@ -16,9 +16,9 @@ function ItemCount({min, max, onAdd}) {
 
     return (
     <>
-     <button id="restar" onClick={modifCounter}>Restar</button>
-      <p>{counter}</p>
-     <button id="agregar" onClick={modifCounter}>Agregar</button>
+     <button id="restar" onClick={modifCounter} className='boton'>Restar</button>
+      <p className='counter'>{counter}</p>
+     <button id="agregar" onClick={modifCounter} className="boton">Agregar</button>
     </>
     );
 }

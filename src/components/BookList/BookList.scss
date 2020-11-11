@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$fuente: 'Roboto Mono', monospace;
+
+.container__p{
+    @extend .m-3;
+    font-family: $fuente;
+}
+
+.latestBooks{
+    @extend .container-fluid;
+    @extend .row;
+}

@@ -5,16 +5,16 @@ import "./Navbar.scss";
 function Navbar() {
     return (
         <nav className="navbar">
-            <a className='navbar-brand' href="#"><img src={logo} /></a>
+            <a className='navbar-brand' href="#"><img src={logo} alt='logo'/></a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="navbarDiv" id="navbarNavAltMarkup">
-                <ul class="navbarDiv__ul">
-                    <li class="nav-item">
+                <ul className="navbarDiv__ul">
+                    <li className="nav-item">
                         <a className="nav-link" href="#">About us</a>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <a className="nav-link" href="#">Browse Shelfs</a>
                     </li>
                 </ul>

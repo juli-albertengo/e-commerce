@@ -1,51 +1,26 @@
+import {useState, useEffect} from 'react'
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import BookList from "../components/BookList/BookList";
+import getBooks from "../fakedb/fakedb";
 import "./Home.scss";
-import educated from "./educated.png";
-import sgt from "./sgt.PNG"
-import badblood from "./badblood.png"
-import rosie from "./rosie.png"
-import thechoice from "./thechoice.png"
 import john from "./johngreen.png"
 
 //import ItemCount from "../components/ItemCount/ItemCount"
-
-const Latest = () => {
-    return (
-        <>
-            <div className="container-fluid">
-                <h2 className="container__p">Latest 2020</h2>
-                <div className="latestBooks">
-                    <div className="bookCard">
-                        <img className="bookCard__img" src={educated}/>
-                    </div>
-                    <div className="bookCard">
-                        <img className="bookCard__img" src={sgt}/>
-                    </div>
-                    <div className="bookCard">
-                        <img className="bookCard__img" src={badblood}/>
-                    </div>
-                    <div className="bookCard">
-                        <img className="bookCard__img" src={rosie}/>
-                    </div>
-                    <div className="bookCard">
-                        <img className="bookCard__img" src={thechoice}/>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-}
 
 const Upcoming = () => {
     return (
         <>
             <div className="container-fluid">
                 <h2 className="container__p">Upcoming Events</h2>
-                <div className="authorCard">
-                    <h4 className="authorCard__title">Come chat with John Green!</h4>
-                    <img className="authorCard__img" src={john}/>
-                    <p className="authorCard__p">Come chat with author John Green blabla</p>
+                <div className="eventCard">
+                    <h4 className="eventCard__title">Come chat with John Green!</h4>
+                    <div className='eventCard__details'>
+                        <div className="eventCard__details__divImg">
+                            <img className="author__img" src={john} alt="author_photo"/>
+                        </div>
+                        <p className="eventCard__p">Come chat with author John Green on Monday and discuss important things lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    </div>
                 </div>
             </div>
         </>
@@ -54,18 +29,28 @@ const Upcoming = () => {
 
 
 function Home(props) {
+    //const showConsole = (value) => {
+      //  console.log(value)
+    //}
+    const [books, setBooks] = useState([]);
 
-    const showConsole = (value) => {
-        console.log(value)
+    async function fetchBooks(){
+        const booksAsJson = await getBooks();
+        const books = await JSON.parse(booksAsJson);
+        setBooks(books);
     }
+
+    useEffect(() => {
+        fetchBooks();
+    }, [])
 
     return (
         <>
             <Navbar />
-            <Latest />
             {
                 //<ItemCount min="1" max="10" onAdd={showConsole}/>
             }
+            {books.length === 0 ? <p>Cargando...</p> : <BookList products={books}/>}     
             <Upcoming/>
             <Footer />
         </>

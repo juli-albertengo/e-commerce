@@ -3,6 +3,7 @@
 
 $negro: #282828;
 $blanco: #fcfcfc;
+$gris: #DADCE0;
 $fuente: 'Roboto Mono', monospace;
 
 
@@ -16,32 +17,63 @@ $fuente: 'Roboto Mono', monospace;
     @extend .row;
 
     .bookCard{
-        height: 300px;
-        @extend .m-4;
-        .bookCard__img{
-            @extend .img-fluid;
-            @extend .rounded;
+        @extend .col-lg-3;
+        @extend .col-md-12;
+        @extend .col-sm-12;
+        @extend .my-3;
+        @extend .d-flex;
+
+        .bookCard__divImg{
+            height: 200px;
+            width: 135px;
+            @extend .mx-2;
+            .bookCard__divImg__img{
+                @extend .img-fluid;
+                @extend .rounded;
+            }
+        }
+
+        .bookCard__bookDetails{
+            font-family: $fuente;
+            .bookCard__bookTitle{
+                @extend .m-0;
+            }
+            .bookCard__bookAuthor{
+                @extend .m-0;
+            }
         }
     }
 }
 
-.authorCard{
+.eventCard{
     @extend .row;
     @extend .m-3;
+    @extend .col-lg-6;
 
-    .authorCard__title{
+    .eventCard__title{
         @extend .col-lg-12;
         font-family: $fuente;
     }
 
-    .authorCard__img{
-        @extend .mx-2;
-        @extend .img-fluid;
-        @extend .rounded;
-    }
+    .eventCard__details{
+        @extend .row;
 
-    .authorCard__p{
-        font-family: $fuente;
+        .eventCard__details__divImg{
+            height: 230px;
+            width: 200px;
+            @extend .m-0;
+            @extend .col-lg-2;
+
+            .author__img{
+                @extend .mx-2;
+                @extend .img-fluid;
+                @extend .rounded;
+            }
+        }
+        .eventCard__p{
+            @extend .col-lg-6;
+            font-family: $fuente;
+        }
     }
 }
 

@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$fuente: 'Roboto Mono', monospace;
+
+.bookCard{
+    @extend .col-lg-3;
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .my-3;
+    @extend .d-flex;
+
+    .bookCard__divImg{
+        height: 200px;
+
+        @extend .mx-2;
+        .bookCard__divImg__img{
+            @extend .img-fluid;
+            @extend .rounded;
+        }
+    }
+
+    .bookCard__bookDetails{
+        font-family: $fuente;
+
+        .bookCard__bookTitle{
+            @extend .m-0;
+        }
+
+        .bookCard__bookAuthor{
+            @extend .m-0;
+        }
+
+        .bookCard__bookStars{
+            @extend .mt-2;
+            @extend .mb-0;
+        }
+
+        .bookCard__button{
+            @extend .btn;
+            @extend .btn-outline-info;
+            @extend .btn-sm;
+        }
+    }
+}

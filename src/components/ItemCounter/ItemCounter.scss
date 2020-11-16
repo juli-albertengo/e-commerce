@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+.counterDiv{
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .mb-2;
+
+    .counter__p{
+        @extend .m-0;
+    }    
+    .counter__boton{
+        @extend .btn;
+        @extend .btn-outline-info;
+        @extend .btn-sm;
+        @extend .mx-2;
+        @extend .py-1;
+    }
+}
+

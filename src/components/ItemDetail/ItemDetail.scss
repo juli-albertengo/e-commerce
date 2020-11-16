@@ -15,7 +15,6 @@ $fuente: 'Roboto Mono', monospace;
 
     .bookCard__divImg{
         height: 200px;
-        width: 135px;
 
         @extend .mx-2;
         .bookCard__divImg__img{
@@ -44,6 +43,16 @@ $fuente: 'Roboto Mono', monospace;
             @extend .btn;
             @extend .btn-outline-info;
             @extend .btn-sm;
+        }
+
+        .bookCard__comprarDiv{
+            @extend .my-3;
+            @extend .text-right;
+            .bookCard__button--comprar{
+                @extend .btn;
+                @extend .btn-outline-info;
+                @extend .btn-sm;
+            }
         }
     }
 }

@@ -4,46 +4,8 @@
 $negro: #282828;
 $blanco: #fcfcfc;
 $gris: #DADCE0;
+$rojo: #d62828;
 $fuente: 'Roboto Mono', monospace;
-
-
-.container__p{
-    @extend .m-3;
-    font-family: $fuente;
-}
-
-.latestBooks{
-    @extend .container-fluid;
-    @extend .row;
-
-    .bookCard{
-        @extend .col-lg-3;
-        @extend .col-md-12;
-        @extend .col-sm-12;
-        @extend .my-3;
-        @extend .d-flex;
-
-        .bookCard__divImg{
-            height: 200px;
-            width: 135px;
-            @extend .mx-2;
-            .bookCard__divImg__img{
-                @extend .img-fluid;
-                @extend .rounded;
-            }
-        }
-
-        .bookCard__bookDetails{
-            font-family: $fuente;
-            .bookCard__bookTitle{
-                @extend .m-0;
-            }
-            .bookCard__bookAuthor{
-                @extend .m-0;
-            }
-        }
-    }
-}
 
 .eventCard{
     @extend .row;
@@ -76,5 +38,3 @@ $fuente: 'Roboto Mono', monospace;
         }
     }
 }
-
-

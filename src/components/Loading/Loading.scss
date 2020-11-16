@@ -1,0 +1,31 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$rojo: #d62828;
+$fuente: 'Roboto Mono', monospace;
+
+.loadingDiv{
+    @extend .container-fluid;
+    @extend .text-center;
+    height: 10rem;
+
+    .loadingDiv__text{
+        @extend .my-3;
+        @extend .text-center;
+        font-family: $fuente;
+        @extend .text-secondary;
+        font-size: 3rem;
+    }
+
+    .loadingDiv__spinnerDiv{
+        @extend .spinner-border;
+        @extend .text-secondary;
+
+        .loadingDiv__spinnerDiv__spinner{
+            @extend .sr-only;
+        }
+    }
+}

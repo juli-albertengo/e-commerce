@@ -3,8 +3,8 @@ import "./BookList.scss";
 
 //Para resolver lo delas fotos provisoriamente
 import educated from "./educated.png";
+import badblood from "./badblood.png";
 import sgt from "./sgt.PNG"
-import badblood from "./badblood.png"
 import rosie from "./rosie.png"
 import thechoice from "./thechoice.png"
 import lookingforalaska from "./lookingforalaska.png"

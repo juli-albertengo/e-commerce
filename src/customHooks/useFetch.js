@@ -7,15 +7,18 @@ const useFetch = (initialValue) => {
     const [loading, setLoading] = useState(true);
     const [state, setState] = useState(initialValue);
 
-    async function fetchBooks(){
-        let booksAsJson = await getBooks();
-        const books = await JSON.parse(booksAsJson);
-        setState(books);
-        setLoading(false);
-    }
-
     useEffect(() => {
+        let ignore = false;
+        async function fetchBooks(){
+            let booksAsJson = await getBooks();
+            if(!ignore){
+                const books = await JSON.parse(booksAsJson);
+                setState(books);
+                setLoading(false);
+            }
+        }
         fetchBooks();
+        return () => (ignore = true);
     }, [])
 
     return[state, loading];

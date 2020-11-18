@@ -2,23 +2,26 @@ import CartIcon from "../CartIcon/CartIcon";
 import logo from "./logo.png"
 import "./Navbar.scss";
 
+//Routes
+import {NavLink} from 'react-router-dom';
+
 function Navbar() {
     return (
         <nav className="navbar">
-            <a className='navbar-brand' href="#"><img src={logo} alt='logo'/></a>
+            <NavLink to='/'><img src={logo} alt='logo'/></NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="navbarDiv" id="navbarNavAltMarkup">
                 <ul className="navbarDiv__ul">
                     <li className="nav-item">
-                        <a className="nav-link" href="#">About us</a>
+                        <NavLink to='/aboutus'><p className='navbar-text'>About us</p> </NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Browse Shelfs</a>
+                        <NavLink to='/browseShelfs'><p className="navbar-text">Browse Shelfs</p></NavLink>
                     </li>
                 </ul>
-                <a href="#"><span className="navbar-text">My Cart <CartIcon /></span></a>
+                <NavLink to='/myCart'><span className="navbar-text">My Cart <CartIcon /></span></NavLink>
            </div>
         </nav>
     );

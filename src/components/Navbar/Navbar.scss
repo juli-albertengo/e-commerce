@@ -30,9 +30,13 @@ $fuente: 'Roboto Mono', monospace;
         }
 
         .navbar-text{
-            @extend .px-2;
+            @extend .px-3;
+            @extend .m-0;
             font-family: $fuente;
             color: $blanco;
+        }
+        .navbar-text:hover{
+            text-decoration: underline;
         }
     }
 }

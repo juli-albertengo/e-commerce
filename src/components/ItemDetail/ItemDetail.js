@@ -1,5 +1,6 @@
 import "./ItemDetail.scss";
 import ItemCounter from '../ItemCounter/ItemCounter';
+import {NavLink} from 'react-router-dom'
 
 function ItemDetail({ product, photo }) {
 
@@ -19,7 +20,7 @@ function ItemDetail({ product, photo }) {
                     <p className='bookCard__bookPrice'>${product.price}</p>
                     <ItemCounter min="1" max="10" onAdd={showConsole}/>
                     <div className="bookCard__comprarDiv">
-                        <button className='bookCard__button--comprar'>Comprar</button>
+                    <NavLink to='/myCart'><button className='bookCard__button--comprar'>Comprar</button></NavLink>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,18 @@
-export default function getSingleBook(){
-    return new Promise(resolve => {
-        setTimeout(()=>{
-            resolve(product);
-        }, 2000)
-    })
+export default function getSingleBook(bookId) {
+	let id = parseInt(bookId);
+	return new Promise(resolve => {
+		setTimeout(() => {
+			let bookToReturn = products.find(book => {
+				if (book.prodId === id) {
+					return book;
+				}
+			})
+			resolve(bookToReturn);
+		}, 2000)
+	})
 }
 
-const product = `{
+const products = [{
 	"prodId": 0,
 	"title": "Educated",
 	"author": "Tara Westover",
@@ -17,4 +23,81 @@ const product = `{
 	"genre": "memoir",
 	"realeasedDate": "11/27/2018",
 	"reviews": "dontknow"
-}`
+}, {
+	"prodId": 1,
+	"title": "Small Great Things",
+	"author": "Jodi Picoult",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "sgt",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "novel",
+	"realeasedDate": "04/11/2017",
+	"reviews": "dontknow"
+}, {
+	"prodId": 2,
+	"title": "Bad Blood",
+	"author": "John Carreyrou",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "https://ibb.co/hmJFrXC",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "nonfiction",
+	"realeasedDate": "07/11/2019",
+	"reviews": "dontknow"
+}, {
+	"prodId": 3,
+	"title": "The Rosie Project",
+	"author": "Graeme Simsion",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "rosie",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "novel",
+	"realeasedDate": "02/02/2014",
+	"reviews": "dontknow"
+}, {
+	"prodId": 4,
+	"title": "The Choice",
+	"author": "Edith Eva Eger",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "thechoice",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "memoir",
+	"realeasedDate": "02/01/2019",
+	"reviews": "dontknow"
+}, {
+	"prodId": 5,
+	"title": "Looking for Alaska",
+	"author": "John Green",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "lookingforalaska",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "novel",
+	"realeasedDate": "03/03/2005",
+	"reviews": "dontknow"
+}, {
+	"prodId": 6,
+	"title": "Little Women",
+	"author": "Louisa May Alcott",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "littlewomen",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "novel",
+	"realeasedDate": "06/01/2013",
+	"reviews": "dontknow"
+}, {
+	"prodId": 7,
+	"title": "Extremely Loud and Incredibly Close",
+	"author": "Jonathan Safran Foer",
+	"price": 200,
+	"stars": "5 stars",
+	"img": "extremely",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+	"genre": "novel",
+	"realeasedDate": "04/06/2006",
+	"reviews": "dontknow"
+}]

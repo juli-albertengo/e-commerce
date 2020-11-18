@@ -1,4 +1,7 @@
 import "./Item.scss";
+//Route
+import { NavLink } from 'react-router-dom'
+
 
 function Item({ product, photo }) {
     return (
@@ -12,7 +15,7 @@ function Item({ product, photo }) {
                     <p className='bookCard__bookAuthor'>by {product.author}</p>
                     <p className='bookCard__bookStars'>{product.stars}</p>
                     <p className='bookCard__bookPrice'>${product.price}</p>
-                    <button className='bookCard__button'>+ Info</button>
+                    <NavLink to={`/books/${product.prodId}`}> <button className='bookCard__button'>+ Info</button>  </NavLink>
                 </div>
             </div>
         </>

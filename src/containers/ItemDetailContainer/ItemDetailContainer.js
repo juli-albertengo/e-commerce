@@ -1,6 +1,9 @@
 //Hooks
 import {useState, useEffect} from 'react'
 
+//Route - Params
+import {useParams} from 'react-router-dom';
+
 //FakeDb
 import getSingleBook from "../../fakedb/fakedbsinglebook";
 
@@ -12,19 +15,22 @@ import Loading from "../../components/Loading/Loading"
 import educated from './educated.png'
 
 function ItemDetailContainer() {
-    const [book, setBook] = useState([]);
+    const [book, setBook] = useState({});
     const [loading, setLoading] = useState(true);
+    const {bookId} = useParams();
 
-    async function fetchSingleBook(){
-        const bookAsJson = await getSingleBook();
-        const book = await JSON.parse(bookAsJson);
-        setBook(book);
-        setLoading(false);
-    }
 
     useEffect(() => {
-        fetchSingleBook();
-    }, [])
+        let ignore = false;
+        async function fetchSingleBook(bookId){
+            const book = await getSingleBook(bookId);
+            if(!ignore){
+                setBook(book);
+                setLoading(false);
+            }
+        }
+        fetchSingleBook(bookId);
+    }, [bookId])
 
     return (
         <>

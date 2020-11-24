@@ -1,11 +1,13 @@
+import {useState} from 'react'
 import "./ItemDetail.scss";
 import ItemCounter from '../ItemCounter/ItemCounter';
 import {NavLink} from 'react-router-dom'
 
 function ItemDetail({ product, photo }) {
+    const [units, setUnits] = useState(1)
 
-    const showConsole = (value) => {
-        console.log(value)
+    const comprarUnidades = (value) => {
+        setUnits(value);
     }
     return (
         <>
@@ -18,9 +20,9 @@ function ItemDetail({ product, photo }) {
                     <p className='bookCard__bookAuthor'>by {product.author}</p>
                     <p className='bookCard__bookStars'>{product.stars}</p>
                     <p className='bookCard__bookPrice'>${product.price}</p>
-                    <ItemCounter min="1" max="10" onAdd={showConsole}/>
+                    <ItemCounter min="1" max="10" onAdd={comprarUnidades}/>
                     <div className="bookCard__comprarDiv">
-                    <NavLink to='/myCart'><button className='bookCard__button--comprar'>Comprar</button></NavLink>
+                    <NavLink to='/myCart'><button className='bookCard__button--comprar'>Comprar {units}</button></NavLink>
                     </div>
                 </div>
             </div>

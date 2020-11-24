@@ -8,6 +8,7 @@ const useFetch = (initialValue) => {
     const [state, setState] = useState(initialValue);
 
     useEffect(() => {
+        setLoading(true);
         let ignore = false;
         async function fetchBooks(){
             let booksAsJson = await getBooks();

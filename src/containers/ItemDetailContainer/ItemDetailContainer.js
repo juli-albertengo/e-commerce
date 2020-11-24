@@ -21,15 +21,17 @@ function ItemDetailContainer() {
 
 
     useEffect(() => {
+        setLoading(true);
         let ignore = false;
         async function fetchSingleBook(bookId){
-            const book = await getSingleBook(bookId);
+            const bookToSave = await getSingleBook(bookId);
             if(!ignore){
-                setBook(book);
+                setBook(bookToSave);
                 setLoading(false);
             }
         }
         fetchSingleBook(bookId);
+        return () => (ignore = true);
     }, [bookId])
 
     return (

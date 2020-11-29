@@ -56,3 +56,23 @@ $fuente: 'Roboto Mono', monospace;
         }
     }
 }
+
+.description{
+    @extend .container-fluid;
+}
+
+.moreInfo{
+    height: 5rem;
+    background-color: $gris;
+    @extend .container-fluid;
+
+    .moreInfo__p{
+        @extend .my-2;
+        font-family: $fuente;
+        @extend .text-center;
+    }
+}
+
+.reviews{
+    @extend .container-fluid;
+}

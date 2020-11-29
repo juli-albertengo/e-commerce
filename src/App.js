@@ -10,30 +10,35 @@ import Footer from './components/Footer/Footer'
 //Router
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
+//Provider
+import {AppProvider} from './context/useAppContext';
+
 function App() {
   return (
     <>
+    <AppProvider>
       <BrowserRouter>
-        <Navbar/>
-        <Switch>
-          <Route exact path='/'>
-            <Home/>
-          </Route>
-          <Route exact path='/books/:bookId'>
-            <ItemDetailContainer />
-          </Route>
-          <Route exact path='/aboutus'>
-            <AboutUs />
-          </Route>
-          <Route exact path='/browseShelfs'>
-            <BrowseShelfs />
-          </Route>
-          <Route exact path='/myCart'>
-            <CartContainer />
-          </Route>
-        </Switch>
-        <Footer/>
-      </BrowserRouter>
+          <Navbar/>
+          <Switch>
+            <Route exact path='/'>
+              <Home/>
+            </Route>
+            <Route exact path='/books/:bookId'>
+              <ItemDetailContainer />
+            </Route>
+            <Route exact path='/aboutus'>
+              <AboutUs />
+            </Route>
+            <Route exact path='/browseShelfs'>
+              <BrowseShelfs />
+            </Route>
+            <Route exact path='/myCart'>
+              <CartContainer />
+            </Route>
+          </Switch>
+          <Footer/>
+        </BrowserRouter>
+    </AppProvider>
     </>
   );
 }

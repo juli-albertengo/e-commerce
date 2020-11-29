@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import "./ItemCounter.scss"
 
-function ItemCounter({min, max, onAdd}) {
-    const [counter, setCounter] = useState(1);
+function ItemCounter({min, max, onAdd, initialValue}) {
+    const [counter, setCounter] = useState(initialValue);
 
     const addToCount = () => {
         if (counter < max){

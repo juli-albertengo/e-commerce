@@ -1,0 +1,11 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$fuente: 'Roboto Mono', monospace;
+
+.cartNumber{
+    font-size: 0.9rem;
+    @extend .p-1;
+}

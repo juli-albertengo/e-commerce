@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$rojo: #d62828;
+$amarillo: #F2A71A;
+$fuente: 'Roboto Mono', monospace;
+
+
+.bajada{
+    font-family: $fuente;
+}
+
+.titulo{
+    font-family: $fuente;
+}
+
+.boton{
+    @extend .btn;
+    @extend .btn-outline-warning;
+    font-family: $fuente;
+}
+.boton:hover{
+    color: $blanco;
+    background-color: $amarillo;
+}
+
+.features{
+    background-color: $gris;
+    height: 5rem;
+    @extend .align-items-center;
+
+    .features__p{
+        font-family: $fuente;
+        @extend .text-center;
+    }
+}
+
+.contact__p{
+    @extend .my-2;
+    font-family: $fuente;
+    text-decoration: underline;
+    cursor: pointer;
+}

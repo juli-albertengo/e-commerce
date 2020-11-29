@@ -14,9 +14,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "./src/img/educated.png",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "memoir",
+	"genre": "Memoir",
 	"realeasedDate": "11/27/2018",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 1,
 	"title": "Small Great Things",
@@ -25,9 +26,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "sgt",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "novel",
+	"genre": "Novel",
 	"realeasedDate": "04/11/2017",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 2,
 	"title": "Bad Blood",
@@ -36,9 +38,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "https://ibb.co/hmJFrXC",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "nonfiction",
+	"genre": "Non-Fiction",
 	"realeasedDate": "07/11/2019",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 3,
 	"title": "The Rosie Project",
@@ -47,9 +50,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "rosie",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "novel",
+	"genre": "Novel",
 	"realeasedDate": "02/02/2014",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 4,
 	"title": "The Choice",
@@ -58,9 +62,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "thechoice",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "memoir",
+	"genre": "Memoir",
 	"realeasedDate": "02/01/2019",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 5,
 	"title": "Looking for Alaska",
@@ -69,9 +74,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "lookingforalaska",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "novel",
+	"genre": "Novel",
 	"realeasedDate": "03/03/2005",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 6,
 	"title": "Little Women",
@@ -80,9 +86,10 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "littlewomen",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "novel",
+	"genre": "Novel",
 	"realeasedDate": "06/01/2013",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }, {
 	"prodId": 7,
 	"title": "Extremely Loud and Incredibly Close",
@@ -91,7 +98,8 @@ const products = `[{
 	"stars": "5 stars",
 	"img": "extremely",
 	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-	"genre": "novel",
+	"genre": "Novel",
 	"realeasedDate": "04/06/2006",
-	"reviews": "dontknow"
+	"reviews": "dontknow",
+	"length": "200 pages"
 }]`

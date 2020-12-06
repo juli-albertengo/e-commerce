@@ -1,16 +1,21 @@
+//Bootstrap
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+
+//Containers
 import Home from './containers/HomeContainer/HomeContainer'
 import AboutUs from './containers/AboutusContainer/AboutUsContainer'
 import BrowseShelfs from './containers/BrowseShelfsContainer/BrowseShelfsContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './containers/CartContainer/CartContainer'
+
+//Components
 import Navbar from "./components/Navbar/Navbar"
 import Footer from './components/Footer/Footer'
 
 //Router
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-//Provider
+//ContextProvider
 import {AppProvider} from './context/useAppContext';
 
 function App() {

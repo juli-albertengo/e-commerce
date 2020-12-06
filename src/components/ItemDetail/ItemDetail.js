@@ -1,11 +1,17 @@
-import {useState} from 'react'
+//Estilos
 import "./ItemDetail.scss";
+
+//Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
+
+//NavLink & Sate
+import {useState} from 'react'
 import {NavLink} from 'react-router-dom'
 
 //Context
 import {useAppContext} from '../../context/useAppContext'
 
+//Componente renderizado por ItemDetailContainer, recibe por props el producto en cuestion y se linkea al appContext para sumar productos/items/libros al carrito
 function ItemDetail({ product, photo }) {
     const [units, setUnits] = useState(1)
 

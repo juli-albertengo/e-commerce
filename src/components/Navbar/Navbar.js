@@ -1,6 +1,11 @@
-import CartIcon from "../CartIcon/CartIcon";
-import logo from "./logo.png"
+//Estilos
 import "./Navbar.scss";
+
+//Recursos - Logo
+import logo from "./logo.png"
+
+//Componentes
+import CartIcon from "../CartIcon/CartIcon";
 
 //Routes
 import {NavLink} from 'react-router-dom';

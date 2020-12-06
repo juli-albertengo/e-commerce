@@ -1,7 +1,13 @@
-import {NavLink} from 'react-router-dom';
-import vector from './resource.png';
+//Estilos
 import './AboutUsContainer.scss';
 
+//Recursos
+import vector from './resource.png';
+
+//NavLink
+import {NavLink} from 'react-router-dom';
+
+//Componente relleno para darle mas entidad al sitio
 function AboutUs(){
     return(
         <div className='container-fluid'>

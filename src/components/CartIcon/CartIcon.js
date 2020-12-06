@@ -1,10 +1,12 @@
+//Estilos
 import "../Navbar/Navbar.scss";
 import './CartIcon.scss';
 
+//Context
 import {useAppContext} from '../../context/useAppContext'
 
+//Icono de cart con cantidad de items agregados al carrito
 function CartIcon() {
-
     const {cart} = useAppContext()
     return (
         <>

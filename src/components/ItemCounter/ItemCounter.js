@@ -1,6 +1,10 @@
-import React, {useState} from 'react'
+//Estilos
 import "./ItemCounter.scss"
 
+//State
+import {useState} from 'react'
+
+//Item counter es reutilizable (En CartItem y en ItemDetail) para llevar la cuenta de las unidades a comprar
 function ItemCounter({min, max, onAdd, initialValue}) {
     const [counter, setCounter] = useState(initialValue);
 

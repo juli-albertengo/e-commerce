@@ -1,7 +1,7 @@
-import Item from '../Item/Item'
+//Estilos
 import "./BookList.scss";
 
-//Para resolver lo delas fotos provisoriamente
+//Recursos - Para resolver lo delas fotos provisoriamente
 import educated from "./educated.png";
 import badblood from "./badblood.png";
 import sgt from "./sgt.PNG"
@@ -11,8 +11,12 @@ import lookingforalaska from "./lookingforalaska.png"
 import littlewomen from "./littlewomen.png"
 import extremely from "./extremely.png"
 
+//Componentes
+import Item from '../Item/Item'
+
 const photos = [educated, sgt, badblood, rosie, thechoice, lookingforalaska, littlewomen, extremely]
 
+//Map que devuelve el componente ITEM - por cada libro recibido en products/props que vienen de la home
 function BookList({ products }) {
     return (
         <div className="container-fluid">

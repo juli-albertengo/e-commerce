@@ -1,5 +1,8 @@
-import logo from "./logo.png"
+//Estilos
 import "./Footer.scss";
+
+//Recursos - Logo
+import logo from "./logo.png"
 
 function Footer() {
     return (

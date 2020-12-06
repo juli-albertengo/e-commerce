@@ -1,8 +1,10 @@
+//Estilos
 import "./Item.scss";
-//Route
+
+//Routes
 import { NavLink } from 'react-router-dom'
 
-
+//Componente renderizado por BOOKLIST Component - Tiene un link que por paramtertos lleva a ItemDetailContainer
 function Item({ product, photo }) {
     return (
         <>
@@ -15,7 +17,7 @@ function Item({ product, photo }) {
                     <p className='bookCard__bookAuthor'>by {product.author}</p>
                     <p className='bookCard__bookStars'>{product.stars}</p>
                     <p className='bookCard__bookPrice'>${product.price}</p>
-                    <NavLink to={`/books/${product.prodId}`}> <button className='bookCard__button'>+ Info</button>  </NavLink>
+                    <NavLink to={`/books/${product.bookId}`}> <button className='bookCard__button'>+ Info</button>  </NavLink>
                 </div>
             </div>
         </>

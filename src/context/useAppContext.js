@@ -6,7 +6,7 @@ const AppContext = createContext();
 //Crear el customHook y exportarlo
 export const useAppContext = () => useContext(AppContext);
 
-//Crear el provedor
+//Crear el provedor - Solo para manejar todo lo relacionado al array de carrito de compras
 export const AppProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     

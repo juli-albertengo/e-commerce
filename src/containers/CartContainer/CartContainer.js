@@ -1,6 +1,11 @@
-import {useAppContext} from '../../context/useAppContext'
+//Estilos
 import './CartContainer.scss';
+
+//Components
 import CartItem from '../../components/CartItem/CartItem';
+
+//Context
+import {useAppContext} from '../../context/useAppContext'
 
 function CartContainer(){
 

@@ -1,7 +1,11 @@
+//Estilos
 import "./UpcomingEvents.scss";
+
+//Recursos - Author Photos
 import john from "./johngreen.jpg";
 import jodie from "./jodie.jpg";
 
+//Componente relleno para darle mas entidad al sitio
 function UpcomingEvents() {
     return (
         <>

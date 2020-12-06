@@ -1,3 +1,4 @@
+//Estilos
 import "./Loading.scss";
 
 function Loading() {

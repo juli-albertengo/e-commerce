@@ -1,7 +1,13 @@
-import {useState} from 'react'
+//Estilos
 import './CartItem.scss';
+
+//Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
 
+//State
+import {useState} from 'react'
+
+//Por cada item agregado al carrito - Utiliza ItemCounter para llevar la cuenta de las unidades a comprar
 function CartItem({product}){
     const [units, setUnits] = useState(product.amount)
     const comprarUnidades = (value) => {

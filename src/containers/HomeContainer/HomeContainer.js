@@ -4,10 +4,10 @@ import UpcomingEvents from "../../components/UpcomingEvents/UpcomingEvents"
 import Loading from "../../components/Loading/Loading"
 
 //CustomHooks
-import useFetch from '../../customHooks/useFetch'
+import useFetchAllBooks from '../../customHooks/useFetchAllBooks'
 
 function Home() {
-   const [books, loading] = useFetch([]);
+   const [books, loading] = useFetchAllBooks([]);
 
     return (
         <>

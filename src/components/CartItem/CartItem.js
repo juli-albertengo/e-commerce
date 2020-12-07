@@ -4,6 +4,9 @@ import './CartItem.scss';
 //Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
 
+//Context
+import {useAppContext} from '../../context/useAppContext'
+
 //State
 import {useState} from 'react'
 
@@ -13,6 +16,9 @@ function CartItem({product}){
     const comprarUnidades = (value) => {
         setUnits(value);
     }
+    const {handleRemove} = useAppContext()
+
+    let total = product.product.price * units
 
     return(
         <div className='container-fluid'>
@@ -21,11 +27,11 @@ function CartItem({product}){
                     <img className='img-fluid'/>
                 </div>
                 <div className='col-lg-6'>
-                    <h4>{product.product.title}</h4>
-                    <p>by {product.product.author}</p>
-                    <p>${product.product.price}</p>
+                    <h4 className='bajada'>{product.product.title}</h4>
+                    <p className='bajada'>by {product.product.author}</p>
                     <ItemCounter min="1" max="10" onAdd={comprarUnidades} initialValue={units}/>
-                    <p>Units: {units}</p>
+                    <p className='bajada'>Total: ${total} USD</p>
+                    <button onClick={() => handleRemove(product.product.title)} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
                 </div>
             </div>
             {

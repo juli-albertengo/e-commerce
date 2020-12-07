@@ -14,8 +14,17 @@ export const AppProvider = ({children}) => {
         setCart([...cart, {product: book, amount: units}])
     }
 
+    const handleRemove = (title) => {
+        let newCart = cart.filter(book => {
+            if(book.product.title !== title){
+                return book;
+            };
+        })
+        setCart(newCart);
+    }
+
     return (
-        <AppContext.Provider value={{handleBuy, cart}}>
+        <AppContext.Provider value={{handleBuy, cart, handleRemove}}>
             {children}
         </AppContext.Provider>
     )

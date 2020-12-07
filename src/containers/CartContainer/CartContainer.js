@@ -11,18 +11,24 @@ import { NavLink } from 'react-router-dom'
 import {useAppContext} from '../../context/useAppContext'
 
 function CartContainer(){
-
     const {cart} = useAppContext()
 
     return(
         <div className='container-fluid'>
             <h2 className='cart__heading'>My Cart</h2>
             {cart.length === 0 ? 
-                <NavLink to={'/'}> <h5>There are no items in your cart. Go to home</h5>  </NavLink>: 
+                <div className='mb-4'>
+                <p className='bajada'>You haven't selected any item yet!</p>
+                <NavLink to='/browseShelfs/books/0'>
+                    <button className='ml-5 boton'>Let's find your next read</button>
+                </NavLink>
+                </div>: 
                 cart.map((purchase, index) => {
-                    return <CartItem key={index} product={purchase}></CartItem>
+                    return <CartItem key={index} ind={index} product={purchase}></CartItem>
                 }) 
             }
+            <h4 className='bajada'>Total Amount: ${}</h4>
+            <button className='mb-3'> Process Purchase</button>
             {
             //Detalle del producto, foto con nombre, precio a la derecha,
             //Poder agregar mas items del mismo libro

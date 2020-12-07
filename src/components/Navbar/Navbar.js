@@ -23,7 +23,7 @@ function Navbar() {
                         <NavLink to='/aboutus'><p className='navbar-text'>About us</p> </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink to='/browseShelfs'><p className="navbar-text">Browse Shelfs</p></NavLink>
+                        <NavLink to='/browseShelfs/books/0'><p className="navbar-text">Browse Shelfs</p></NavLink>
                     </li>
                 </ul>
                 <NavLink to='/myCart'><span className="navbar-text">My Cart <CartIcon /></span></NavLink>

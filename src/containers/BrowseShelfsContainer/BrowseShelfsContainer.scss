@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$rojo: #d62828;
+$amarillo: #F2A71A;
+$fuente: 'Roboto Mono', monospace;
+
+.categories{
+    font-family: $fuente;
+    text-decoration: underline;
+}
+

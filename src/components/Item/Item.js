@@ -1,6 +1,9 @@
 //Estilos
 import "./Item.scss";
 
+//Componentes
+import Stars from '../Stars/Stars'
+
 //Routes
 import { NavLink } from 'react-router-dom'
 
@@ -15,9 +18,8 @@ function Item({ product, photo }) {
                 <div className='bookCard__bookDetails'>
                     <h5 className='bookCard__bookTitle'>{product.title}</h5>
                     <p className='bookCard__bookAuthor'>by {product.author}</p>
-                    <p className='bookCard__bookStars'>{product.stars}</p>
-                    <p className='bookCard__bookPrice'>${product.price}</p>
-                    <NavLink to={`/books/${product.bookId}`}> <button className='bookCard__button'>+ Info</button>  </NavLink>
+                    <Stars stars={product.stars}/>
+                    <NavLink to={`/books/${product.bookId}`}> <button className='bookCard__button m-3'>+ Info</button>  </NavLink>
                 </div>
             </div>
         </>

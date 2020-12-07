@@ -3,19 +3,21 @@ import {useEffect, useState} from 'react';
 //Import Firebase
 import { getFirestore } from '../firebase';
 
-//FETCH SINGLE BOOK USANDO PARAMETRO DEL URL
-const useFetchSingleBook = (initialValue, bookId) => {
+
+//FETCH ALL BOOKS IN THE DATABASE
+const useFetchSomeBooks = (initialValue, filter, value) => {
     const [loading, setLoading] = useState(true);
     const [state, setState] = useState(initialValue);
-    
-    useEffect(()=>{
+
+
+    useEffect(() => {
         setLoading(true);
         let ignore = false;
         let db = getFirestore();
-        async function fetchSingleBook(bookId){
+        async function fetchSomeBooks(filter, value){
             if(!ignore){
-                const booksFromFB = await db.collection('books').where('bookId', '==', parseInt(bookId)).get();
-                booksFromFB.forEach(function(doc){
+                let bookCollection = await db.collection('books').where(filter, '==', value).get();
+                bookCollection.forEach(function(doc){
                     if(!doc.exists){
                         console.log("Item doesn't exists");
                     } else {
@@ -25,11 +27,11 @@ const useFetchSingleBook = (initialValue, bookId) => {
                 })
             }
         }
-        fetchSingleBook(bookId);
+        fetchSomeBooks(filter, value);
         return () => (ignore = true);
-    }, [bookId])
+    }, [filter, value])
 
-    return [state, loading];
+    return[state, loading];
 }
 
-export default useFetchSingleBook;
+export default useFetchSomeBooks;

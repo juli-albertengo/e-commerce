@@ -16,7 +16,7 @@ function AboutUs(){
                 <div className='col-lg-4 col-md-12 col-sm-12'>
                     <h2 className='ml-5 titulo'>Cool Title</h2>
                     <p className='ml-5 bajada'>In our Bookstore we want to sell books, so we encourage you to read more. Plus inspirational things here..</p>
-                    <NavLink to='/browseShelfs'>
+                    <NavLink to='/browseShelfs/books/0'>
                         <button className='ml-5 boton'>Let's find your next read</button>
                     </NavLink>
                 </div>

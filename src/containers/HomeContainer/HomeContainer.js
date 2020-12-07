@@ -14,7 +14,11 @@ function Home() {
             {loading ? 
             <Loading />
             : 
-            <BookList products={books}/>}     
+            <>
+            <h2 className="container__p">Latest 2020!</h2>
+            <BookList products={books}/>
+            </>
+            }     
             <UpcomingEvents />
         </>
     );

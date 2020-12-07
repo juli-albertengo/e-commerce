@@ -34,7 +34,7 @@ function App() {
             <Route exact path='/aboutus'>
               <AboutUs />
             </Route>
-            <Route exact path='/browseShelfs'>
+            <Route exact path='/browseShelfs/books/:genreId?'>
               <BrowseShelfs />
             </Route>
             <Route exact path='/myCart'>

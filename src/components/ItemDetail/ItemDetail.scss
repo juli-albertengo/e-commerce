@@ -7,7 +7,7 @@ $gris: #DADCE0;
 $fuente: 'Roboto Mono', monospace;
 
 .bookCard{
-    @extend .col-lg-3;
+    @extend .col-lg-4;
     @extend .col-md-12;
     @extend .col-sm-12;
     @extend .my-3;
@@ -34,9 +34,8 @@ $fuente: 'Roboto Mono', monospace;
             @extend .m-0;
         }
 
-        .bookCard__bookStars{
-            @extend .mt-2;
-            @extend .mb-0;
+        .bookCard__bookPrice{
+            font-size: 1.2rem;
         }
 
         .bookCard__button{

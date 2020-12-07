@@ -26,7 +26,7 @@ function ItemCounter({min, max, onAdd, initialValue}) {
     <>
     <div className='counterDiv'>
          <button id="restar" onClick={substractToCount} className='counter__boton'>-</button>
-            <p className='counter__p'>{counter}</p>
+            <p className='counter__p bajada'>{counter}</p>
         <button id="agregar" onClick={addToCount} className="counter__boton">+</button>
     </div>
     </>

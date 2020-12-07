@@ -20,7 +20,6 @@ const photos = [educated, sgt, badblood, rosie, thechoice, lookingforalaska, lit
 function BookList({ products }) {
     return (
         <div className="container-fluid">
-            <h2 className="container__p">Latest 2020!</h2>
             <div className="latestBooks">
                 {products.map((book, index) => {
                     return <Item key={index} product={book} photo={photos[index]} />

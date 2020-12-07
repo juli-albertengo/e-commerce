@@ -45,7 +45,9 @@ function Genre({ genreId }) {
         <>
           <p className='moreInfo__p'>Memoir</p>
         </>
-      );
+      )
+    default: 
+      return(<p>Category not found</p>);
   }
 }
 

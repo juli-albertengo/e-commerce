@@ -24,7 +24,7 @@ function CartItem({product}){
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-lg-2'>
-                    <img className='img-fluid'/>
+                    <img src={product.product.img} className='img-fluid' alt='Book_Cover'/>
                 </div>
                 <div className='col-lg-6'>
                     <h4 className='bajada'>{product.product.title}</h4>

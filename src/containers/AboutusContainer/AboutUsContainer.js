@@ -7,8 +7,10 @@ import vector from './resource.png';
 //NavLink
 import {NavLink} from 'react-router-dom';
 
+
 //Componente relleno para darle mas entidad al sitio
 function AboutUs(){
+
     return(
         <div className='container-fluid'>
             <h1 className='my-3 d-flex justify-content-center'>Bookstore</h1>
@@ -21,7 +23,7 @@ function AboutUs(){
                     </NavLink>
                 </div>
                 <div className='col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center'>
-                    <img src={vector} className='img-fluid'/>
+                    <img src={vector} className='img-fluid' alt='bookStore'/>
                 </div>
             </div>
             <div className='row features'>
@@ -42,7 +44,7 @@ function AboutUs(){
                 <h2 className='titulo my-4'>Where to find us</h2>
                 <div className='row'>
                     <div className='col-lg-3 col-md-12 col-sm-12 my-3 pl-5'>
-                        <iframe title='Where_To_Find_Us' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d366.63730406530317!2d-87.62585062025559!3d41.86125865169065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c840fe0ba75%3A0xb133ad897ee9fdeb!2s1500%20Michigan%20Ave%204668%20N%2C%20Chicago%2C%20IL%2060605%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1606661227157!5m2!1ses!2sar" width="600" height="350" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe title='Where_To_Find_Us' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d366.63730406530317!2d-87.62585062025559!3d41.86125865169065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c840fe0ba75%3A0xb133ad897ee9fdeb!2s1500%20Michigan%20Ave%204668%20N%2C%20Chicago%2C%20IL%2060605%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1606661227157!5m2!1ses!2sar" width="600" height="350" frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
                     </div>
                     <div className='col-lg-6 col-md-12 col-sm-12 my-3 offset-2'>
                         <h3 className='titulo my-2'>Contact Details</h3>
@@ -53,6 +55,7 @@ function AboutUs(){
                 </div>
             </div>
         </div>
+
     )
 }
 

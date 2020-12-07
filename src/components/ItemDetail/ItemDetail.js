@@ -14,7 +14,7 @@ import {NavLink} from 'react-router-dom'
 import {useAppContext} from '../../context/useAppContext'
 
 //Componente renderizado por ItemDetailContainer, recibe por props el producto en cuestion y se linkea al appContext para sumar productos/items/libros al carrito
-function ItemDetail({ product, photo }) {
+function ItemDetail({ product}) {
     const [units, setUnits] = useState(1)
 
     const comprarUnidades = (value) => {
@@ -26,7 +26,7 @@ function ItemDetail({ product, photo }) {
         <>
             <div className='bookCard'>
                 <div className="bookCard__divImg">
-                    <img className="bookCard__divImg__img" src={photo} alt="Book_Cover" />
+                    <img className="bookCard__divImg__img" src={product.img} alt="Book_Cover" />
                 </div>
                 <div className='bookCard__bookDetails'>
                     <h3 className='bookCard__bookTitle'>{product.title}</h3>

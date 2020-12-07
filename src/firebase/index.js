@@ -20,3 +20,4 @@ const app = firebase.initializeApp(firebaseConfig);
   export const getFirestore = () => {
       return firebase.firestore();
   }
+

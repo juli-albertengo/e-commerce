@@ -1,6 +1,3 @@
-//Recursos
-import educated from './educated.png'
-
 //Components
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Loading from "../../components/Loading/Loading"
@@ -21,7 +18,7 @@ function ItemDetailContainer() {
             {loading ? 
             <Loading />
             : 
-            <ItemDetail product={book} photo={educated}/>
+            <ItemDetail product={book}/>
             }
         </>
     );

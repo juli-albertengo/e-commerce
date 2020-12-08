@@ -16,15 +16,17 @@ const useFetchSomeBooks = (initialValue, filter, value) => {
         let db = getFirestore();
         async function fetchSomeBooks(filter, value){
             if(!ignore){
+                let myBooks = []
                 let bookCollection = await db.collection('books').where(filter, '==', value).get();
                 bookCollection.forEach(function(doc){
                     if(!doc.exists){
                         console.log("Item doesn't exists");
                     } else {
-                        setState(doc.data());
-                        setLoading(false);
+                        myBooks.push(doc.data())
                     }
                 })
+                setState(myBooks);
+                setLoading(false);
             }
         }
         fetchSomeBooks(filter, value);

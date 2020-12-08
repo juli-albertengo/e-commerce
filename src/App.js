@@ -7,6 +7,7 @@ import AboutUs from './containers/AboutusContainer/AboutUsContainer'
 import BrowseShelfs from './containers/BrowseShelfsContainer/BrowseShelfsContainer'
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
 import CartContainer from './containers/CartContainer/CartContainer'
+import BrowseShelfsFilteredContainer from './containers/BrowseShelfsFilteredContainer/BrowseShelfsFilteredContainer';
 
 //Components
 import Navbar from "./components/Navbar/Navbar"
@@ -34,8 +35,11 @@ function App() {
             <Route exact path='/aboutus'>
               <AboutUs />
             </Route>
-            <Route exact path='/browseShelfs/books/:genreId?'>
+            <Route exact path='/browseShelfs'>
               <BrowseShelfs />
+            </Route>
+            <Route exact path='/browseShelfs/:genreId'>
+              <BrowseShelfsFilteredContainer/>
             </Route>
             <Route exact path='/myCart'>
               <CartContainer />

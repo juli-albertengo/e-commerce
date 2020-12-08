@@ -11,20 +11,35 @@ export const AppProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     
     const handleBuy = (book, units) => {
-        setCart([...cart, {product: book, amount: units}])
+        let newPurchase = {book, units};
+        setCart([...cart, newPurchase]);
+    }
+
+    const modifyPurchaseUnits = (identifier, value) => {
+        let miCompra = cart.find(compra => compra.book.title === identifier);
+        miCompra.units = value;
+    }
+
+    const getCartTotal = (cart) => {
+        let suma = 0;
+        cart.forEach(item => {
+            suma += item.book.price * item.units;
+        })
+        return suma;
     }
 
     const handleRemove = (title) => {
-        let newCart = cart.filter(book => {
-            if(book.product.title !== title){
-                return book;
+        let newCart = cart.filter(compra => {
+        if(compra.book.title !== title){
+            return compra;
             };
         })
         setCart(newCart);
+        return newCart;
     }
-
+    
     return (
-        <AppContext.Provider value={{handleBuy, cart, handleRemove}}>
+        <AppContext.Provider value={{handleBuy, cart, handleRemove, modifyPurchaseUnits, getCartTotal}}>
             {children}
         </AppContext.Provider>
     )

@@ -15,26 +15,14 @@ import {useAppContext} from '../../context/useAppContext'
 
 //Componente renderizado por ItemDetailContainer, recibe por props el producto en cuestion y se linkea al appContext para sumar productos/items/libros al carrito
 function ItemDetail({ product}) {
-    const {handleBuy} = useAppContext()
+    const {handleBuy, cart} = useAppContext()
     const [units, setUnits] = useState(1)
     const comprarUnidades = (value) => {
         setUnits(value);
     }
 
-    //NOTIFICACION DE ITEM AGREGADO AL CARRITO
-    const [show, setShow] = useState(false);
-    const showNotif = () => {
-        setShow(true);
-    }
-    const dismiss = () => {
-        setShow(false);
-    }
     return (
         <>
-            <div className={show ? 'showIt' : 'dontShowIt'}>
-                <p className='m-1'>The book has been added to your Cart!</p>
-                <button onClick={() => dismiss()} className='ml-4 my-2 dismiss'>Dismiss</button>
-            </div>
             <div className='bookCard'>
                 <div className="bookCard__divImg">
                     <img className="bookCard__divImg__img" src={product.img} alt="Book_Cover" />
@@ -52,11 +40,23 @@ function ItemDetail({ product}) {
                             </NavLink>
                             </div> :
                             <>
-                            <ItemCounter min="1" max="10" initialValue={1} onAdd={comprarUnidades}/>
                             <div className="bookCard__comprarDiv">
-                               {/* <NavLink to='/myCart'><button  data-bs-toggle="modal" data-bs-target="#continueShopping" onClick={() => {handleBuy(product, units)}} className='bookCard__button--comprar' type='button'>Buy {units}</button></NavLink>
-                                */}
-                                <button onClick={() => {handleBuy(product, units); showNotif()}} className='bookCard__button--comprar'>Buy {units}</button>
+                                {cart.find(cartItem => cartItem.book === product.title) ? 
+                                <>
+                                <p>The book has been added to your cart!</p>
+                                <NavLink to='/myCart'>
+                                <button className='ml-5 boton'>Go to my cart!</button>
+                            </NavLink>
+                            <NavLink to='/browseShelfs'>
+                                <button className='ml-5 boton'>Let's find more books!</button>
+                            </NavLink>
+                            </>
+                                :
+                                <>
+                                <ItemCounter min="1" max="10" initialValue={1} onAdd={comprarUnidades}/>
+                                <button onClick={() => {handleBuy(product, units)}} className='bookCard__button--comprar'>Buy {units}</button>
+                                </>
+                                }
                             </div>
                             </>
                         }
@@ -82,13 +82,6 @@ function ItemDetail({ product}) {
                     </div>
                 </div>
             </div>
-            {/*
-            <div className='reviews'>
-            <h3 className='titulo my-2'>Reviews</h3>
-            <p>{product.reviews}</p>
-        </div>
-                */
-            }
         </>
     )
 }

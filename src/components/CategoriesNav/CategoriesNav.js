@@ -11,7 +11,7 @@ function CategoriesNav(){
             <NavLink to='/browseShelfs/1' ><p>Memoirs</p></NavLink>
             <NavLink to='/browseShelfs/3' ><p>Non-Fiction</p></NavLink>
             <NavLink to='/browseShelfs/6' ><p>Poetry</p></NavLink>
-            <NavLink to='/browseShelfs/7' ><p>Graphic Novels &amp; Comics</p></NavLink>
+            <NavLink to='/browseShelfs/7'><p>Graphic Novels &amp; Comics</p></NavLink>
             <NavLink to='/browseShelfs/5' ><p>Young Adult</p></NavLink>
             <NavLink to='/browseShelfs/4' ><p>Kids</p></NavLink>   
         </div>

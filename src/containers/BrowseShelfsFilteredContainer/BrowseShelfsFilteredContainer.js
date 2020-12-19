@@ -16,6 +16,7 @@ import useFetchSomeBooks from '../../customHooks/useFetchSomeBooks';
 function BrowseShelfs(){
     const {genreId} = useParams();
     const [books, loading] = useFetchSomeBooks([], 'genreId', genreId);
+    
     return(
         <> 
         <CategoriesNav/>

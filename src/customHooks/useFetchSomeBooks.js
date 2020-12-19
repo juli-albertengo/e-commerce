@@ -9,7 +9,6 @@ const useFetchSomeBooks = (initialValue, filter, value) => {
     const [loading, setLoading] = useState(true);
     const [state, setState] = useState(initialValue);
 
-
     useEffect(() => {
         setLoading(true);
         let ignore = false;

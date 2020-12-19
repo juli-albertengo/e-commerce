@@ -5,43 +5,37 @@ import './CartItem.scss';
 import ItemCounter from '../ItemCounter/ItemCounter';
 
 //State
-import {useState} from 'react'
 
 //Context
 import {useAppContext} from '../../context/useAppContext'
 
 //Por cada item agregado al carrito - Utiliza ItemCounter para llevar la cuenta de las unidades a comprar
-function CartItem({purchase, setTotalCompra}){
-    const {handleRemove, modifyPurchaseUnits, getCartTotal, cart} = useAppContext()
-    const [units, setUnits] = useState(purchase.units)
+function CartItem({purchase}){
+    const {modifyPurchaseUnits, handleRemove} = useAppContext()
 
     const agregarUnidades = (value) => {
-        setUnits(value)
-        modifyPurchaseUnits(purchase.book.title, value);
-        getCartTotal(cart)
-        setTotalCompra(getCartTotal(cart));
+        modifyPurchaseUnits(purchase.book, value);
     }
 
     const removerCompra = (identifier) => {
-        let newCart = handleRemove(identifier);
-        setTotalCompra(getCartTotal(newCart));
+        handleRemove(identifier);
     }
 
-    let total = units * purchase.book.price;
+    let totalPorLibro = purchase.units * purchase.price;
 
     return(
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-lg-2'>
-                    <img src={purchase.book.img} className='img-fluid' alt='Book_Cover'/>
+                    <img src={purchase.img} className='img-fluid' alt='Book_Cover'/>
                 </div>
                 <div className='col-lg-6'>
-                    <h4 className='bajada'>{purchase.book.title}</h4>
-                    <p className='bajada'>by {purchase.book.author}</p>
-                    <p className='bajada'>Price: ${purchase.book.price} USD</p>
-                    <ItemCounter min="1" max="10" initialValue={units} onAdd={agregarUnidades}/>
-                    <p className='bajada'>Total: ${total} USD</p>
-                    <button onClick={() => {removerCompra(purchase.book.title)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
+                    <h4 className='bajada'>{purchase.book}</h4>
+                    <p className='bajada'>by {purchase.author}</p>
+                    <p className='bajada'>Price: ${purchase.price} USD</p>
+                    <ItemCounter min="1" max="10" initialValue={purchase.units} onAdd={agregarUnidades}/>
+                    <p className='bajada'>Total: ${totalPorLibro} USD</p>
+                    <button onClick={() => {removerCompra(purchase.book)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
                 </div>
             </div>
             {

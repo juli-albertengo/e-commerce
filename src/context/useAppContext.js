@@ -11,31 +11,37 @@ export const AppProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     
     const handleBuy = (book, units) => {
-        let newPurchase = {book, units};
+        let bookTitle = book.title;
+        let bookPrice = book.price;
+        let bookAuthor = book.author;
+        let bookImg = book.img;
+        let newPurchase = {book: bookTitle, author: bookAuthor, price: bookPrice, img: bookImg, units};
         setCart([...cart, newPurchase]);
     }
 
     const modifyPurchaseUnits = (identifier, value) => {
-        let miCompra = cart.find(compra => compra.book.title === identifier);
-        miCompra.units = value;
+        let newCart = cart.map(compra =>{
+            if (compra.book === identifier){
+                compra.units = value;
+                return compra;
+            } else {
+                return compra
+            }
+        })
+        setCart(newCart);
     }
 
     const getCartTotal = (cart) => {
         let suma = 0;
-        cart.forEach(item => {
-            suma += item.book.price * item.units;
+        cart.forEach(compra => {
+            suma += compra.price * compra.units;
         })
         return suma;
     }
 
     const handleRemove = (title) => {
-        let newCart = cart.filter(compra => {
-        if(compra.book.title !== title){
-            return compra;
-            };
-        })
+        let newCart = cart.filter(compra => compra.book !== title)
         setCart(newCart);
-        return newCart;
     }
     
     return (

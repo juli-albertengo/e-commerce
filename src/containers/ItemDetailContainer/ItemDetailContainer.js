@@ -18,6 +18,8 @@ function ItemDetailContainer() {
             {loading ? 
             <Loading />
             : 
+            book === 'Not Found' ? 
+            <p>The requested book doesn't exists</p> :
             <ItemDetail product={book}/>
             }
         </>

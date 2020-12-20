@@ -15,14 +15,20 @@ const useFetchSingleBook = (initialValue, bookId) => {
         async function fetchSingleBook(bookId){
             if(!ignore){
                 const booksFromFB = await db.collection('books').where('bookId', '==', parseInt(bookId)).get();
-                booksFromFB.forEach(function(doc){
-                    if(!doc.exists){
-                        console.log("Item doesn't exists");
-                    } else {
-                        setState(doc.data());
-                        setLoading(false);
-                    }
-                })
+                if(booksFromFB.docs.length === 0){
+                    setState('Not Found');
+                    setLoading(false)
+                } else{
+                    booksFromFB.forEach(function(doc){
+                        if(!doc.exists){
+                            setState('Not Found');
+                            setLoading(false)
+                        } else {
+                            setState(doc.data());
+                            setLoading(false);
+                        }
+                    })
+                }
             }
         }
         fetchSingleBook(bookId);

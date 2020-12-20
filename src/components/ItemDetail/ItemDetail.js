@@ -70,7 +70,7 @@ function ItemDetail({ product}) {
                 <div className='row'>
                     <div className='col-lg-4 col-md-12 co-sm-12'>
                         <h5 className='moreInfo__p'>Genre</h5>
-                        <Genre genreId={parseInt(product.genreId)} />
+                        <Genre genreId={product.genreId} />
                     </div>
                     <div className='col-lg-4 col-md-12 co-sm-12'>
                         <h5 className='moreInfo__p'>Released Date</h5>

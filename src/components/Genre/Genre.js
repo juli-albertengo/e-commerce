@@ -4,46 +4,53 @@
 //Componente renderizado por ITEMDetail Component - Genre
 function Genre({ genreId }) {
   switch (genreId) {
-    case 7:
+    case 'Novels':
+    case '2':
       return (
         <>
-          <p className='moreInfo__p'>Graphic Novels &amp; Comics</p>
+          <p className='moreInfo__p'>Novels</p>
         </>
       );
-    case 6:
+    case 'Memoirs':
+    case '1':
       return (
         <>
-          <p className='moreInfo__p'>Poetry</p>
+          <p className='moreInfo__p'>Memoirs</p>
         </>
       );
-    case 5:
-      return (
-        <>
-          <p className='moreInfo__p'>Young Adult</p>
-        </>
-      );
-    case 4:
-      return (
-        <>
-          <p className='moreInfo__p'>Kids</p>
-        </>
-      );
-    case 3:
+    case 'Non-Fiction':
+    case '3':
       return (
         <>
           <p className='moreInfo__p'>Non-Fiction</p>
         </>
       );
-    case 2:
+    case 'Poetry':
+    case '6':
       return (
         <>
-          <p className='moreInfo__p'>Novel</p>
+          <p className='moreInfo__p'>Poetry</p>
         </>
       );
-    case 1:
+    case 'GraphicNovels&Comics':
+    case '7':
       return (
         <>
-          <p className='moreInfo__p'>Memoir</p>
+          <p className='moreInfo__p'>Graphic Novels &amp; Comics</p>
+        </>
+      );
+    case 'Young-Adult':
+    case '5':
+      return (
+        <>
+          <p className='moreInfo__p'>Young Adult</p>
+        </>
+      );
+    case 'Kids':
+    case '4':
+      return (
+        <>
+          <p className='moreInfo__p'>Books for Kids</p>
         </>
       )
     default: 

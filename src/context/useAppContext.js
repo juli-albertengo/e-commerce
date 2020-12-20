@@ -1,14 +1,29 @@
 import {createContext, useContext, useState } from 'react';
 
+
+//Firbase
+import { getFirestore } from '../firebase';
+
+
 //Crear el Contexto
 const AppContext = createContext();
 
 //Crear el customHook y exportarlo
 export const useAppContext = () => useContext(AppContext);
 
+
+
 //Crear el provedor - Solo para manejar todo lo relacionado al array de carrito de compras
 export const AppProvider = ({children}) => {
-    const [cart, setCart] = useState([]);
+    function getCartfromLS(){
+        let mySavedCart = JSON.parse(localStorage.getItem("mySavedCart"));
+        if(mySavedCart === null){
+            return []
+        } else {
+            return mySavedCart
+        }
+    }
+    const [cart, setCart] = useState(getCartfromLS());
     
     const handleBuy = (book, units) => {
         let bookTitle = book.title;
@@ -17,6 +32,7 @@ export const AppProvider = ({children}) => {
         let bookImg = book.img;
         let newPurchase = {book: bookTitle, author: bookAuthor, price: bookPrice, img: bookImg, units};
         setCart([...cart, newPurchase]);
+        localStorage.setItem("mySavedCart", JSON.stringify([...cart, newPurchase]));
     }
 
     const modifyPurchaseUnits = (identifier, value) => {
@@ -29,6 +45,7 @@ export const AppProvider = ({children}) => {
             }
         })
         setCart(newCart);
+        localStorage.setItem("mySavedCart", JSON.stringify(newCart));
     }
 
     const getCartTotal = (cart) => {
@@ -42,10 +59,29 @@ export const AppProvider = ({children}) => {
     const handleRemove = (title) => {
         let newCart = cart.filter(compra => compra.book !== title)
         setCart(newCart);
+        localStorage.setItem("mySavedCart", JSON.stringify(newCart));
+    }
+
+    const updateStock = ({products}) => {
+        let myCart = products.cart;
+        const db = getFirestore()
+        myCart.forEach(async (book) => {
+            let docsRef = await db.collection('books').where('title', '==', book.book).get()
+            docsRef.forEach(async function(doc){
+                let docRef = await db.collection('books').doc(doc.id) 
+                let prevStock = doc.data().stock
+                docRef.update({stock: prevStock - book.units})
+            })
+        })
+    }
+
+    const cleanCart = () => {
+        localStorage.setItem("mySavedCart", JSON.stringify([]));
+        setCart([]);
     }
     
     return (
-        <AppContext.Provider value={{handleBuy, cart, handleRemove, modifyPurchaseUnits, getCartTotal}}>
+        <AppContext.Provider value={{handleBuy, cart, handleRemove, modifyPurchaseUnits, getCartTotal, updateStock, cleanCart}}>
             {children}
         </AppContext.Provider>
     )

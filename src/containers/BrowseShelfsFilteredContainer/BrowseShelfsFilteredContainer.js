@@ -15,7 +15,27 @@ import useFetchSomeBooks from '../../customHooks/useFetchSomeBooks';
 
 function BrowseShelfs(){
     const {genreId} = useParams();
-    const [books, loading] = useFetchSomeBooks([], 'genreId', genreId);
+    function parseURL(genre){
+        switch(genre){
+            case 'Novels':
+                return '2';
+            case 'Memoirs':
+                return '1';
+            case 'Non-Fiction':
+                return '3';
+            case 'Poetry':
+                return '6';
+            case 'GraphicNovels&Comics':
+                return '7';
+            case 'Young-Adult':
+                return '5';
+            case 'Kids':
+                return '4';
+            default:
+                return null;
+        }
+    }
+    const [books, loading] = useFetchSomeBooks([], 'genreId', parseURL(genreId));
     
     return(
         <> 
@@ -23,7 +43,7 @@ function BrowseShelfs(){
         {loading ?
             <Loading /> :
             <>
-            <Genre genreId={parseInt(genreId)} />
+            <Genre genreId={genreId} />
             <FilteredBookList products={books}/>
             </> 
         }

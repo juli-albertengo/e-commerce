@@ -1,21 +1,18 @@
 //Estilos
 
-
 //Recursos
-
 
 //NavLink
 import {NavLink} from 'react-router-dom';
 
-
-//Componente relleno para darle mas entidad al sitio
+//Componente 404
 function NotFoundContainer(){
 
     return(
         <div className='container-fluid'>
-            <p>Not Found</p>
+            <p>There's nothing to see here!</p>
             <NavLink to={'/'}>
-                <button>Go home</button>
+                <button>Let's find your next read!</button>
             </NavLink>
         </div>
 

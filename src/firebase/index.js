@@ -1,6 +1,8 @@
+//Import Firebase
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+//Firebase Config Object
 let firebaseConfig = {
     apiKey: "AIzaSyCW1JLAWF1JxrekF_T-HvvpXZvSYi43xyE",
     authDomain: "bookstore-69243.firebaseapp.com",

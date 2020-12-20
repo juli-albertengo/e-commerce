@@ -17,20 +17,20 @@ function BrowseShelfs(){
     const {genreId} = useParams();
     function parseURL(genre){
         switch(genre){
-            case 'Novels':
-                return '2';
             case 'Memoirs':
                 return '1';
+            case 'Novels':
+                return '2';
             case 'Non-Fiction':
                 return '3';
+            case 'Kids':
+                return '4';
+            case 'Young-Adult':
+                return '5';
             case 'Poetry':
                 return '6';
             case 'GraphicNovels&Comics':
                 return '7';
-            case 'Young-Adult':
-                return '5';
-            case 'Kids':
-                return '4';
             default:
                 return null;
         }
@@ -42,9 +42,14 @@ function BrowseShelfs(){
         <CategoriesNav/>
         {loading ?
             <Loading /> :
+            books === [] ?
             <>
-            <Genre genreId={genreId} />
-            <FilteredBookList products={books}/>
+                <p>There are no books in this genre</p>
+            </>
+            :
+            <>
+                <Genre genreId={genreId} />
+                <FilteredBookList products={books}/>
             </> 
         }
         </>   

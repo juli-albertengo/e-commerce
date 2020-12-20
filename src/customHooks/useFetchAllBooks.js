@@ -1,3 +1,4 @@
+//Import React
 import {useEffect, useState} from 'react';
 
 //Import Firebase
@@ -18,7 +19,8 @@ const useFetchAllBooks = (initialValue) => {
                 let bookCollection = await db.collection('books');
                 let response = await bookCollection.get()
                 if (response.size === 0){
-                    console.log('No Results');
+                    setState('Problem with DB');
+                    setLoading(false);
                 } else {
                     setState(response.docs.map(doc => doc.data()))
                     setLoading(false);

@@ -16,21 +16,26 @@ function CartContainer(){
     return(
         <div className='container-fluid'>
             <h2 className='cart__heading'>My Cart</h2>
+
             {cart.length === 0 ? 
+
                 <div className='mb-4'>
-                <p className='bajada'>You haven't selected any item yet!</p>
-                <NavLink to='/browseShelfs'>
-                    <button className='ml-5 boton'>Let's find your next read</button>
-                </NavLink>
-                </div>:
+                    <p className='bajada'>You haven't selected any item yet!</p>
+                    <NavLink to='/browseShelfs'>
+                        <button className='ml-5 boton'>Let's find your next read</button>
+                    </NavLink>
+                </div> :
+                
                 <> 
-                {cart.map((purchase, index) => {
-                    return <CartItem key={index} purchase={purchase}></CartItem>
-                })}
-                <h4 className='bajada'>Total Amount: ${getCartTotal(cart)}</h4>
-                <NavLink to={`/placeOrder`}> <button className='mb-3'>Process Purchase</button>  </NavLink>
+                    {cart.map((purchase, index) => {
+                        return <CartItem key={index} purchase={purchase}></CartItem>
+                    })}
+
+                    <h4 className='bajada'>Total Amount: ${getCartTotal(cart)}</h4>
+                    <NavLink to={`/placeOrder`}> <button className='mb-3'>Process Purchase</button>  </NavLink>
                 </>
             }
+
         </div>
     )
 }

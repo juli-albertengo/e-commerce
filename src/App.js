@@ -2,12 +2,12 @@
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 //Containers
-import Home from './containers/HomeContainer/HomeContainer'
-import AboutUs from './containers/AboutusContainer/AboutUsContainer'
-import BrowseShelfs from './containers/BrowseShelfsContainer/BrowseShelfsContainer'
-import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer'
-import CartContainer from './containers/CartContainer/CartContainer'
+import Home from './containers/HomeContainer/HomeContainer';
+import AboutUs from './containers/AboutusContainer/AboutUsContainer';
+import BrowseShelfs from './containers/BrowseShelfsContainer/BrowseShelfsContainer';
 import BrowseShelfsFilteredContainer from './containers/BrowseShelfsFilteredContainer/BrowseShelfsFilteredContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import CartContainer from './containers/CartContainer/CartContainer';
 import PlaceOrderContainer from './containers/PlaceOrderContainer/PlaceOrderContainer';
 import NotFoundContainer from './containers/NotFoundContainer/NotFoundContainer';
 

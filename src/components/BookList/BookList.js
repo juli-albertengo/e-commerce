@@ -4,7 +4,7 @@ import "./BookList.scss";
 //Componentes
 import Item from '../Item/Item'
 
-//Map que devuelve el componente ITEM - por cada libro recibido en products/props que vienen de la home
+//Map que devuelve el componente ITEM - por cada libro recibido en products (props que vienen de la home)
 function BookList({ products }) {
     return (
         <div className="container-fluid">

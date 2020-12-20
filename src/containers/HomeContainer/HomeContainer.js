@@ -12,11 +12,15 @@ function Home() {
     return (
         <>
             {loading ? 
-            <Loading />
-            : 
+            <Loading /> : 
+            books === 'Problem with DB' ?
             <>
-            <h2 className="container__p">Latest 2020!</h2>
-            <BookList products={books}/>
+                <p>There has been a problem laoding the books, please come back later</p>
+            </> 
+            :
+            <>
+                <h2 className="container__p">Latest 2020!</h2>
+                <BookList products={books}/>
             </>
             }     
             <UpcomingEvents />

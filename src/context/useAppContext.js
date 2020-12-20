@@ -1,9 +1,8 @@
+//Import React
 import {createContext, useContext, useState } from 'react';
 
-
-//Firbase
+//Import Firbase
 import { getFirestore } from '../firebase';
-
 
 //Crear el Contexto
 const AppContext = createContext();
@@ -11,10 +10,10 @@ const AppContext = createContext();
 //Crear el customHook y exportarlo
 export const useAppContext = () => useContext(AppContext);
 
-
-
-//Crear el provedor - Solo para manejar todo lo relacionado al array de carrito de compras
+//Crear el provedor - Para manejar todo lo relacionado al carrito de compras
 export const AppProvider = ({children}) => {
+
+    //Get Cart from Local Storage
     function getCartfromLS(){
         let mySavedCart = JSON.parse(localStorage.getItem("mySavedCart"));
         if(mySavedCart === null){
@@ -23,8 +22,11 @@ export const AppProvider = ({children}) => {
             return mySavedCart
         }
     }
+
+    //Estado - Usar LS
     const [cart, setCart] = useState(getCartfromLS());
     
+    //Agregar compra - Boton Buy
     const handleBuy = (book, units) => {
         let bookTitle = book.title;
         let bookPrice = book.price;
@@ -35,6 +37,7 @@ export const AppProvider = ({children}) => {
         localStorage.setItem("mySavedCart", JSON.stringify([...cart, newPurchase]));
     }
 
+    //Cambio de unidades - onAdd
     const modifyPurchaseUnits = (identifier, value) => {
         let newCart = cart.map(compra =>{
             if (compra.book === identifier){
@@ -48,6 +51,14 @@ export const AppProvider = ({children}) => {
         localStorage.setItem("mySavedCart", JSON.stringify(newCart));
     }
 
+    //Remover compra - Boton remove from cart
+    const handleRemove = (title) => {
+        let newCart = cart.filter(compra => compra.book !== title)
+        setCart(newCart);
+        localStorage.setItem("mySavedCart", JSON.stringify(newCart));
+    }
+    
+    //Total del carrito
     const getCartTotal = (cart) => {
         let suma = 0;
         cart.forEach(compra => {
@@ -56,12 +67,7 @@ export const AppProvider = ({children}) => {
         return suma;
     }
 
-    const handleRemove = (title) => {
-        let newCart = cart.filter(compra => compra.book !== title)
-        setCart(newCart);
-        localStorage.setItem("mySavedCart", JSON.stringify(newCart));
-    }
-
+    //Actualizar el stock de firebase cuando se procesa una compra
     const updateStock = ({products}) => {
         let myCart = products.cart;
         const db = getFirestore()
@@ -75,13 +81,14 @@ export const AppProvider = ({children}) => {
         })
     }
 
+    //Limpiar el carrito una vez procesada la compra
     const cleanCart = () => {
         localStorage.setItem("mySavedCart", JSON.stringify([]));
         setCart([]);
     }
     
     return (
-        <AppContext.Provider value={{handleBuy, cart, handleRemove, modifyPurchaseUnits, getCartTotal, updateStock, cleanCart}}>
+        <AppContext.Provider value={{cart, handleBuy, handleRemove, modifyPurchaseUnits, getCartTotal, updateStock, cleanCart}}>
             {children}
         </AppContext.Provider>
     )

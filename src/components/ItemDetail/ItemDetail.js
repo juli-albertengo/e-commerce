@@ -32,34 +32,34 @@ function ItemDetail({ product}) {
                     <p className='bookCard__bookAuthor'>by {product.author}</p>
                     <Stars stars={product.stars}/>
                     <p className='bookCard__bookPrice'>Price: ${product.price} USD</p>
-                        {product.stock <= 0 ?
+                    {/*Chequar si hay stock */}
+                    {product.stock <= 0 ?
                         <div className="bookCard__comprarDiv">
                             <p className='' >Sorry, we are out of stock!</p>
                             <NavLink to='/browseShelfs'>
                                 <button className='ml-5 boton'>Let's find your next read</button>
                             </NavLink>
-                            </div> :
+                        </div> :
+                        <div className="bookCard__comprarDiv">
+                            {/*Chequears si el libro no esta ya en el cart */}
+                            {cart.find(cartItem => cartItem.book === product.title) ? 
                             <>
-                            <div className="bookCard__comprarDiv">
-                                {cart.find(cartItem => cartItem.book === product.title) ? 
-                                <>
                                 <p>The book has been added to your cart!</p>
                                 <NavLink to='/myCart'>
-                                <button className='ml-5 boton'>Go to my cart!</button>
-                            </NavLink>
-                            <NavLink to='/browseShelfs'>
-                                <button className='ml-5 boton'>Let's find more books!</button>
-                            </NavLink>
+                                    <button className='ml-5 boton'>Go to my cart!</button>
+                                </NavLink>
+                                <NavLink to='/browseShelfs'>
+                                    <button className='ml-5 boton'>Let's find more books!</button>
+                                </NavLink>
                             </>
-                                :
-                                <>
+                            :
+                            <>
                                 <ItemCounter min="1" max="10" initialValue={1} onAdd={comprarUnidades}/>
                                 <button onClick={() => {handleBuy(product, units)}} className='bookCard__button--comprar'>Buy {units}</button>
-                                </>
-                                }
-                            </div>
                             </>
-                        }
+                            }
+                        </div>
+                    }
                 </div>
             </div>
             <div className='description'>

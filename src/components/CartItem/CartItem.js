@@ -4,12 +4,10 @@ import './CartItem.scss';
 //Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
 
-//State
-
 //Context
 import {useAppContext} from '../../context/useAppContext'
 
-//Por cada item agregado al carrito - Utiliza ItemCounter para llevar la cuenta de las unidades a comprar
+//Por cada item agregado al carrito
 function CartItem({purchase}){
     const {modifyPurchaseUnits, handleRemove} = useAppContext()
 
@@ -38,14 +36,6 @@ function CartItem({purchase}){
                     <button onClick={() => {removerCompra(purchase.book)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
                 </div>
             </div>
-            {
-            //Detalle del producto, foto con nombre, precio a la derecha,
-            //Poder agregar mas items del mismo libro
-            //Tachito de basura para remover del cart
-            //Total
-            // Datos de contacto - Nombre - Apellido - Telefono - Mail (ingresado dos veces)- Recien ahi activar boton de realizar compra
-            //Place my order
-            }
         </div>
     )
 }

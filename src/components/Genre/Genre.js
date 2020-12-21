@@ -1,3 +1,6 @@
+//Router
+import {NavLink} from 'react-router-dom';
+
 //Componente renderizado por Item Detail y en Browse Shelfs para el titulo de cada categoria
 function Genre({ genreId }) {
   switch (genreId) {
@@ -9,8 +12,10 @@ function Genre({ genreId }) {
       );
     case '1':
       return (
-        <>
-          <p className='fuente'>Memoirs</p>
+        <> 
+          <NavLink to='/browseShelfs/Memoirs' className='similLink'>
+            <p className='fuente'>Memoirs</p>
+          </NavLink>
         </>
       );
     case 'Novels':
@@ -22,7 +27,9 @@ function Genre({ genreId }) {
     case '2':
       return (
         <>
-          <p className='fuente'>Novels</p>
+          <NavLink to='/browseShelfs/Novels' className='similLink'>
+            <p className='fuente'>Novels</p>
+          </NavLink>
         </>
       );
     case 'Non-Fiction':
@@ -34,7 +41,9 @@ function Genre({ genreId }) {
     case '3':
       return (
         <>
-          <p className='fuente'>Non-Fiction</p>
+          <NavLink to='/browseShelfs/Non-Fiction' className='similLink' >
+            <p className='fuente'>Non-Fiction</p>
+          </NavLink>
         </>
       );
     case 'Kids':
@@ -46,7 +55,9 @@ function Genre({ genreId }) {
     case '4':
         return (
           <>
-            <p className='fuente'>Books for Kids</p>
+            <NavLink to='/browseShelfs/Kids' className='similLink'>
+              <p className='fuente'>Kids</p>
+            </NavLink>
           </>
         )
     case 'Young-Adult':
@@ -58,7 +69,9 @@ function Genre({ genreId }) {
     case '5':
       return (
         <>
-          <p className='fuente'>Young Adult</p>
+          <NavLink to='/browseShelfs/Young-Adult' className='similLink'>
+            <p className='fuente'>Young Adult</p>
+          </NavLink>
         </>
       );
     case 'Poetry':
@@ -70,7 +83,9 @@ function Genre({ genreId }) {
     case '6':
       return (
         <>
-          <p className='fuente'>Poetry</p>
+          <NavLink to='/browseShelfs/Poetry' className='similLink'>
+            <p className='fuente'>Poetry</p>
+          </NavLink>
         </>
       );
     case 'GraphicNovels&Comics':
@@ -82,7 +97,9 @@ function Genre({ genreId }) {
     case '7':
       return (
         <>
-          <p className='fuente'>Graphic Novels &amp; Comics</p>
+          <NavLink  to='/browseShelfs/GraphicNovels&amp;Comics' className='similLink'>
+            <p className='fuente'>Graphic Novels &amp; Comics</p>
+          </NavLink>
         </>
       );
     default: 

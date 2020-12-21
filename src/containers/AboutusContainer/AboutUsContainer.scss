@@ -15,12 +15,6 @@ $fuente: 'Roboto Mono', monospace;
     min-height: 4rem;
 }
 
-.contact__p{
-    font-family: $fuente;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 //Upcoming Events
 @media(max-width: 425px){
     .author__img{

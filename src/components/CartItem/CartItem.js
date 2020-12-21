@@ -1,6 +1,9 @@
 //Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
 
+//Router
+import {NavLink} from 'react-router-dom';
+
 //Context
 import {useAppContext} from '../../context/useAppContext'
 
@@ -17,15 +20,17 @@ function CartItem({purchase}){
     }
 
     let totalPorLibro = purchase.units * purchase.price;
-
+    
     return(
         <div className='row'>
             <div className='col-lg-4 col-md-4 col-sm-12 mb-3 text-center'>
                 <img src={purchase.img} className='book__img' alt='Book_Cover'/>
             </div>
             <div className='col-lg-6 col-md-6 col-sm-12'>
-                <h4 className='fuente'>{purchase.book}</h4>
-                <p className='fuente'>by {purchase.author}</p>
+                <NavLink className='similLink' to={`/books/${purchase.bookId.toString()}`}>
+                    <h4 className='fuente'>{purchase.book}</h4>
+                </NavLink>
+                <p className='fuente-light'>by {purchase.author}</p>
                 <p className='fuente mb-4'>Price: US${purchase.price}</p>
                 <div className='d-flex align-items-center mb-3'>
                     <ItemCounter min="1" max="10" initialValue={purchase.units} onAdd={agregarUnidades}/>

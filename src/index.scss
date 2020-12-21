@@ -28,6 +28,11 @@ $fuente: 'Roboto Mono', monospace;
   font-family: $fuente;
 }
 
+.fuente-light{
+  font-family: $fuente;
+  font-weight: 300;
+}
+
 .subrayado{
   text-decoration: underline;
 }
@@ -80,4 +85,27 @@ $fuente: 'Roboto Mono', monospace;
   min-width: 140px;
   max-height: 200px;
   max-width: 140px;
+}
+
+//Link
+.similLink{
+    color: $negro;
+    font-family: $fuente;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.similLink:hover{
+  color: $negro;
+  font-family: $fuente;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+//OrderId
+@media(max-width: 500px){
+  .orderId{
+    display: flex;
+    flex-direction: column;
+  }
 }

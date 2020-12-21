@@ -28,11 +28,12 @@ export const AppProvider = ({children}) => {
     
     //Agregar compra - Boton Buy
     const handleBuy = (book, units) => {
+        let bookId = book.bookId;
         let bookTitle = book.title;
         let bookPrice = book.price;
         let bookAuthor = book.author;
         let bookImg = book.img;
-        let newPurchase = {book: bookTitle, author: bookAuthor, price: bookPrice, img: bookImg, units};
+        let newPurchase = {book: bookTitle, author: bookAuthor, price: bookPrice, img: bookImg, bookId: bookId, units};
         setCart([...cart, newPurchase]);
         localStorage.setItem("mySavedCart", JSON.stringify([...cart, newPurchase]));
     }

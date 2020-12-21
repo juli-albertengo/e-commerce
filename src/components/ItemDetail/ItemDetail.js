@@ -29,7 +29,7 @@ function ItemDetail({ product}) {
                 </div>
                 <div className='col-lg-6 col-md-6'>
                     <h3 className='mb-2 fuente'>{product.title}</h3>
-                    <p className='mb-2 fuente'>by {product.author}</p>
+                    <p className='mb-2 fuente-light'>by {product.author}</p>
                     <Stars stars={product.stars}/>
                     <p className='my-3 fuente'>Price: US$ {product.price}</p>
                     {/*Chequar si hay stock */}
@@ -55,7 +55,7 @@ function ItemDetail({ product}) {
                             :
                             <div className='d-flex alig-items-center'>
                                 <ItemCounter min="1" max="10" initialValue={1} onAdd={comprarUnidades}/>
-                                <button onClick={() => {handleBuy(product, units)}} className=' ml-5 botonComprar'>Buy {units}</button>
+                                <button onClick={() => {handleBuy(product, units)}} className=' ml-5 botonComprar'>Add {units} to my cart </button>
                             </div>
                             }
                         </div>
@@ -64,7 +64,7 @@ function ItemDetail({ product}) {
             </div>
             <div className='description mt-4'>
                 <h3 className='fuente'>Description</h3>
-                <p className='description__p'>{product.description}</p>
+                <p className='fuente-light'>{product.description}</p>
             </div>
             <div className='moreInfo container-fluid pt-2'>
                 <div className='row align-items-center justify-content-center'>

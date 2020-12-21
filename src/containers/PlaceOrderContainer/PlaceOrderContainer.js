@@ -121,7 +121,7 @@ function PlaceOrderContainer(){
                                         ) 
                                     })}
                                     <h4 className='my-3'><span className='fuente subrayado'>Total Amount</span>: ${getCartTotal(cart)}</h4>
-                                    <p className='mb-4 fuente'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <p className='mb-4 fuente-light'>You'll receive an email in the next 24hs with the delivery details!</p>
                                     <NavLink to='/myCart'>
                                         <button className='botonNextRead'>Change my order</button>
                                     </NavLink>
@@ -151,7 +151,7 @@ function PlaceOrderContainer(){
                                             <button className='my-4 ml-auto botonProcess-goCart' type='submit'>Place my order</button>
                                         : 
                                         <>
-                                            <p className='my-3 ml-2 mr-4 fuente'>Please complete all required fields and check that your email is the same in both inputs</p>
+                                            <p className='my-3 ml-2 mr-4 fuente-light'>Please complete all required fields and check that your email is the same in both inputs</p>
                                             <button className='botonProcess-goCart ml-auto' type='submit' disabled>Place my order</button>
                                         </>
                                         }
@@ -165,18 +165,21 @@ function PlaceOrderContainer(){
                                 :
                                 id ? 
                                 <div className='my-4'>
-                                    <h3 className='my-3 fuente subrayado'>Your purchase has been procesed! </h3> 
-                                    <h5 className='mb-4fuente '>Here is your purchase ID: {id}</h5>
+                                    <h3 className='my-4 fuente subrayado'>Your purchase has been procesed! </h3> 
+                                    <div className='d-flex aling-items-center orderId'>
+                                        <h5 className='my-lg-3 mr-2 fuente'><span className='subrayado'>Order ID</span>:</h5>
+                                        <h5 className='my-lg-3 mx-2 fuente'>{id}</h5>
+                                    </div>
                                     {order.products.cart.map((item, index) => {
-                                        return <p className='fuente' key={index}>- {item.book}</p>
+                                        return <p className='fuente-light' key={index}>- {item.book}</p>
                                     })}
-                                    <p className='mb-3 fuente'><span className='subrayado'>Total</span>: US$ {order.total}</p>
-                                    <p className='mb-4 fuente'>You'll receive an email in the next 24hs with the delivery details!</p>
-                                    <p className='text-right fuente'>If you have any questions, please get in touch: <span className='contact__p'>bookstore@gmail.com</span></p>
+                                    <p className='mb-3 fuente-light'><span className='subrayado'>Total</span>: US$ {order.total}</p>
+                                    <p className='my-5 fuente'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <p className='text-right fuente'>If you have any questions, please get in touch: <span className='similLink'>bookstore@gmail.com</span></p>
                                 </div>
                                 :
                                 <div className='my-4'>
-                                    <p className='mb-3 fuente'>There has been an error with your purchase. Please get in touch: bookstore@gmail.com </p> 
+                                    <p className='mb-3 fuente'>There has been an error with your purchase. Please get in touch: <span className='similLink'> bookstore@gmail.com</span></p> 
                                     <p className='fuente'>{err}</p>
                                 </div>
                             }

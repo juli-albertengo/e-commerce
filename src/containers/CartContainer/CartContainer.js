@@ -28,7 +28,7 @@ function CartContainer(){
                         return <CartItem key={index} purchase={purchase}></CartItem>
                     })}
                     <div className='row'>
-                        <h4 className='col-md-6 col-sm-12 fuente'><span className='subrayado'>Total Amount</span>: US$ {getCartTotal(cart)}</h4>
+                        <h5 className='col-md-6 col-sm-12 fuente mb-4'><span className='subrayado'>Total Amount</span>: US$ {getCartTotal(cart)}</h5>
                         <NavLink to={`/placeOrder`} className='col-md-6 col-sm-12'> 
                             <button className='mb-3 botonProcess-goCart'>Process Purchase</button>  
                         </NavLink>

@@ -24,14 +24,14 @@ function ItemDetail({ product}) {
     return (
         <>
             <div className='row mt-3'>
-                <div className="col-lg-3 col-md-6 text-center mb-2">
+                <div className="col-lg-3 col-md-6  mb-2 text-center">
                     <img className="img-fluid" src={product.img} alt="Book_Cover" />
                 </div>
                 <div className='col-lg-6 col-md-6'>
-                    <h3 className='fuente mb-2'>{product.title}</h3>
-                    <p className='fuente mb-2'>by {product.author}</p>
+                    <h3 className='mb-2 fuente'>{product.title}</h3>
+                    <p className='mb-2 fuente'>by {product.author}</p>
                     <Stars stars={product.stars}/>
-                    <p className='fuente my-3'>Price: US$ {product.price}</p>
+                    <p className='my-3 fuente'>Price: US$ {product.price}</p>
                     {/*Chequar si hay stock */}
                     {product.stock <= 0 ?
                         <div>
@@ -49,7 +49,7 @@ function ItemDetail({ product}) {
                                     <button className='ml-md-5 mb-2 botonNextRead'>Let's find more books!</button>
                                 </NavLink>
                                 <NavLink to='/myCart'>
-                                    <button className='ml-md-5 mb-2 botonGoCart'>Go to my cart!</button>
+                                    <button className='ml-md-5 mb-2 botonProcess-goCart'>Go to my cart!</button>
                                 </NavLink>
                             </>
                             :

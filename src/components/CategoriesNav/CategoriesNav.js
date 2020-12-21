@@ -1,5 +1,5 @@
 //Estilos
-import '../../containers/BrowseShelfsContainer/BrowseShelfsContainer.scss'
+import './CategoriesNav.scss'
 
 //NavLink - RouterParams
 import {NavLink} from 'react-router-dom'

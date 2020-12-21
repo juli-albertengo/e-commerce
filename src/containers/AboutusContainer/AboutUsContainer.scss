@@ -1,32 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
-$negro: #282828;
-$blanco: #fcfcfc;
 $gris: #DADCE0;
-$rojo: #d62828;
-$amarillo: #F2A71A;
 $fuente: 'Roboto Mono', monospace;
-
-.fuente{
-    font-family: $fuente;  
-}
 
 @media(max-width: 425px){
     .coolTitle{
         display: none;
     }
-}
-
-.botonNextRead{
-    @extend .btn;
-    @extend .btn-outline-warning;
-    font-family: $fuente;
-}
-
-.botonNextRead:hover{
-    color: $blanco !important;
-    background-color: $amarillo;
 }
 
 .features{
@@ -40,31 +21,16 @@ $fuente: 'Roboto Mono', monospace;
     cursor: pointer;
 }
 
-.eventCard{
-    @extend .m-3;
-    @extend .col-lg-5;
-
-    .eventCard__title{
-        @extend .col-lg-12;
-        font-family: $fuente;
+//Upcoming Events
+@media(max-width: 425px){
+    .author__img{
+        display: none;
     }
+}
 
-    .eventCard__details{
-        @extend .row;
-
-        .eventCard__details__divImg{
-            @extend .m-0;
-            @extend .p-0;
-            @extend .col-lg-3;
-
-            .author__img{
-                @extend .mx-2;
-                @extend .img-thumbnail;
-            }
-        }
-        .eventCard__p{
-            @extend .col-lg-6;
-            font-family: $fuente;
-        }
+@media(min-width: 768px){
+    .author__img{
+        width: 250px;
+        height: 300px;
     }
 }

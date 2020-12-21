@@ -6,24 +6,15 @@ $blanco: #fcfcfc;
 $fuente: 'Roboto Mono', monospace;
 
 .footer{
-    @extend .d-flex;
-    @extend .align-items-center;
-    @extend .justify-content-around;
     background-color: $negro;
-    @extend .px-2;
-
+    
     .footer__p{
-        font-family: $fuente;
         color: $blanco;
+        font-family: $fuente;
 
         .footer__p__a{
             @extend .footer__p;
             text-decoration: underline;
-        }
-    }
-    .footer__divImg{
-        .footer__divImg__img{
-            @extend .img-fluid;
         }
     }
 }

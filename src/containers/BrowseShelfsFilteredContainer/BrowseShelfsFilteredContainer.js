@@ -1,6 +1,3 @@
-//Estilos
-import '../BrowseShelfsContainer/BrowseShelfsContainer.scss'
-
 //Components
 import FilteredBookList from "../../components/FilteredBookList/FilteredBookList"; 
 import Loading from "../../components/Loading/Loading";

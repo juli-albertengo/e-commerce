@@ -1,6 +1,3 @@
-//Estilos
-import '../../containers/CartContainer/CartContainer.scss'
-
 //Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
 
@@ -23,8 +20,8 @@ function CartItem({purchase}){
 
     return(
         <div className='row'>
-            <div className='col-lg-4 col-md-4 col-sm-12 text-center mb-3'>
-                <img src={purchase.img} className='cartItem__img' alt='Book_Cover'/>
+            <div className='col-lg-4 col-md-4 col-sm-12 mb-3 text-center'>
+                <img src={purchase.img} className='book__img' alt='Book_Cover'/>
             </div>
             <div className='col-lg-6 col-md-6 col-sm-12'>
                 <h4 className='fuente'>{purchase.book}</h4>
@@ -32,7 +29,7 @@ function CartItem({purchase}){
                 <p className='fuente mb-4'>Price: US${purchase.price}</p>
                 <div className='d-flex align-items-center mb-3'>
                     <ItemCounter min="1" max="10" initialValue={purchase.units} onAdd={agregarUnidades}/>
-                    <p className='fuente my-0 ml-3'><span className='total'>Total</span>: US${totalPorLibro}</p>
+                    <p className='fuente my-0 ml-3'><span className='subrayado'>Total</span>: US$ {totalPorLibro}</p>
                 </div>
                 <button onClick={() => {removerCompra(purchase.book)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
             </div>

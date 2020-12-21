@@ -1,6 +1,3 @@
-//Estilos
-import "./Item.scss";
-
 //Componentes
 import Stars from '../Stars/Stars'
 
@@ -10,15 +7,15 @@ import { NavLink } from 'react-router-dom'
 //Componente renderizado por BOOKLIST Component - Tiene un link que por paramtertos lleva a ItemDetailContainer
 function Item({product}) {
     return (
-        <div className='bookCard'>
-            <div className="bookCard__divImg">
-                <img className="bookCard__divImg__img" src={product.img} alt="Book_Cover" />
+        <div className='my-3 col-lg-4 col-sm-12 px-3 d-flex bookCard'>
+            <div>
+                <img className="book__img" src={product.img} alt="Book_Cover" />
             </div>
             <div className='ml-2 bookCard__bookDetails'>
-                <h5 className='mb-2'>{product.title}</h5>
-                <p className='mb-2'>by {product.author}</p>
+                <h5 className='mb-2 fuente'>{product.title}</h5>
+                <p className='mb-2 fuente'>by {product.author}</p>
                 <Stars stars={product.stars}/>
-                <NavLink to={`/books/${product.bookId}`}> <button className='my-3 bookCard__button'>+ Info</button>  </NavLink>
+                <NavLink to={`/books/${product.bookId}`}> <button className='my-3 fuente btn btn-outline-info btn-sm'>+ Info</button>  </NavLink>
             </div>
         </div>
     )

@@ -11,3 +11,73 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+// Variables Generales para todo el proyecto - Fuente y colores
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+$negro: #282828;
+$blanco: #fcfcfc;
+$gris: #DADCE0;
+$rojo: #d62828;
+$amarillo: #F2A71A;
+$verde: #198754;
+$fuente: 'Roboto Mono', monospace;
+
+.fuente{
+  font-family: $fuente;
+}
+
+.subrayado{
+  text-decoration: underline;
+}
+
+//BOTONES PARA TODO EL PROYECTO
+//Boton Amarillo - Next Read
+.botonNextRead{
+  @extend .btn;
+  @extend .btn-outline-warning;
+  font-family: $fuente;
+}
+
+.botonNextRead:hover{
+  color: $blanco !important;
+  background-color: $amarillo;
+}
+
+//Boton Verde - Process Purchas or go to cart
+.botonProcess-goCart{
+  @extend .btn;
+  @extend .btn-outline-success;
+  font-family: $fuente;
+}
+
+.botonProcess-goCart:hover{
+  color: $blanco !important;
+  background-color: $verde;
+}
+
+//Boton Celeste - Comprar
+.botonComprar{
+  @extend .btn;
+  @extend .btn-outline-info;
+  font-family: $fuente;
+}
+
+.botonComprar:hover{
+  color: $blanco !important;
+}
+
+//Problema con BD - se usa en varios componentes
+.problemDB{
+  font-family: $fuente;
+  font-size: 1.2rem;
+}
+
+//Size imagenes libros
+.book__img{
+  min-height: 200px;
+  min-width: 140px;
+  max-height: 200px;
+  max-width: 140px;
+}

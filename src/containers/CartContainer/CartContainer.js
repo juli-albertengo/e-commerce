@@ -1,6 +1,3 @@
-//Estilos
-import './CartContainer.scss';
-
 //Components
 import CartItem from '../../components/CartItem/CartItem';
 
@@ -15,7 +12,7 @@ function CartContainer(){
 
     return(
         <div className='container-lg'>
-            <h2 className='cart__heading'>My Cart</h2>
+            <h2 className='my-3 subrayado fuente'>My Cart</h2>
 
             {cart.length === 0 ? 
 
@@ -31,9 +28,9 @@ function CartContainer(){
                         return <CartItem key={index} purchase={purchase}></CartItem>
                     })}
                     <div className='row'>
-                        <h4 className='col-md-6 col-sm-12 fuente'><span className='total'>Total Amount</span>: US${getCartTotal(cart)}</h4>
+                        <h4 className='col-md-6 col-sm-12 fuente'><span className='subrayado'>Total Amount</span>: US$ {getCartTotal(cart)}</h4>
                         <NavLink to={`/placeOrder`} className='col-md-6 col-sm-12'> 
-                            <button className='mb-3 botonProcess'>Process Purchase</button>  
+                            <button className='mb-3 botonProcess-goCart'>Process Purchase</button>  
                         </NavLink>
                     </div>
                 </>

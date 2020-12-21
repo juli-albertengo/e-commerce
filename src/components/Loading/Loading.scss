@@ -8,23 +8,11 @@ $rojo: #d62828;
 $fuente: 'Roboto Mono', monospace;
 
 .loadingDiv{
-    @extend .text-center;
     height: 10rem;
 
     .loadingDiv__text{
-        @extend .my-3;
-        @extend .text-center;
-        @extend .text-secondary;
         font-family: $fuente;
         font-size: 3rem;
     }
 
-    .loadingDiv__spinnerDiv{
-        @extend .spinner-border;
-        @extend .text-secondary;
-
-        .loadingDiv__spinnerDiv__spinner{
-            @extend .sr-only;
-        }
-    }
 }

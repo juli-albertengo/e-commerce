@@ -45,7 +45,7 @@ function Stars({ stars }) {
         </div>
       )
     default:
-      return(<p>No rating has been assigned</p>);
+      return(<p className='fuente'>No rating has been assigned</p>);
   }
 }
 

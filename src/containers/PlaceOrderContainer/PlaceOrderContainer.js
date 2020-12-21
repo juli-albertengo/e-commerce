@@ -1,5 +1,3 @@
-//Estilos
-
 //React
 import { useEffect, useState } from 'react';
 
@@ -107,7 +105,7 @@ function PlaceOrderContainer(){
         {/*Si el carrito esta vacio y la compra aun no esta procesada, mostrar boton para que vaya a comparar libros */}
         {cart.length === 0 && !processed ? 
                             <div className='mb-4'>
-                                <p className='fuente mt-3'>You haven't selected any item yet!</p>
+                                <p className='mt-3'>You haven't selected any item yet!</p>
                                 <NavLink to='/browseShelfs'>
                                     <button className='ml-md-5 botonNextRead'>Let's find your next read</button>
                                 </NavLink>
@@ -116,14 +114,14 @@ function PlaceOrderContainer(){
                             //Si el carrito tiene items, y la compra aun no esta procesada, mostar los items del carrito y el form
                             !processed ? 
                                 <div className='container-fluid'>
-                                    <h2 className='cart__heading'>Place my Order</h2>
+                                    <h2 className='my-3 fuente subrayado'>Place my Order</h2>
                                     {cart.map((purchase, index) => {
                                         return(
                                             <p className='fuente' key={index}>- {purchase.book} ({purchase.units} u.)</p>
                                         ) 
                                     })}
-                                    <h4 className='my-3 fuente'><span className='total'>Total Amount</span>: ${getCartTotal(cart)}</h4>
-                                    <p className='fuente mb-4'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <h4 className='my-3'><span className='fuente subrayado'>Total Amount</span>: ${getCartTotal(cart)}</h4>
+                                    <p className='mb-4 fuente'>You'll receive an email in the next 24hs with the delivery details!</p>
                                     <NavLink to='/myCart'>
                                         <button className='botonNextRead'>Change my order</button>
                                     </NavLink>
@@ -150,11 +148,11 @@ function PlaceOrderContainer(){
                                         </div>
                                         {/* Chequear la validez de los mails antes de habilitar el boton para realizar compra */}
                                         {sameEmails && name !== '' && lastName !== '' && phone !== '' ? 
-                                            <button className='botonProcess my-4 ml-auto' type='submit'>Place my order</button>
+                                            <button className='my-4 ml-auto botonProcess-goCart' type='submit'>Place my order</button>
                                         : 
                                         <>
-                                            <p className='my-3 fuente ml-2 mr-4'>Please complete all required fields and check that your email is the same in both inputs</p>
-                                            <button className='botonProcess ml-auto' type='submit' disabled>Place my order</button>
+                                            <p className='my-3 ml-2 mr-4 fuente'>Please complete all required fields and check that your email is the same in both inputs</p>
+                                            <button className='botonProcess-goCart ml-auto' type='submit' disabled>Place my order</button>
                                         </>
                                         }
                                     </form>
@@ -167,18 +165,18 @@ function PlaceOrderContainer(){
                                 :
                                 id ? 
                                 <div className='my-4'>
-                                    <h3 className='cart__heading'>Your purchase has been procesed! </h3> 
-                                    <h5 className='fuente mb-4'>Here is your purchase ID: {id}</h5>
+                                    <h3 className='my-3 fuente subrayado'>Your purchase has been procesed! </h3> 
+                                    <h5 className='mb-4fuente '>Here is your purchase ID: {id}</h5>
                                     {order.products.cart.map((item, index) => {
                                         return <p className='fuente' key={index}>- {item.book}</p>
                                     })}
-                                    <p className='fuente mb-3'><span className='total'>Total</span>: US$ {order.total}</p>
-                                    <p className='fuente mb-4'>You'll receive an email in the next 24hs with the delivery details!</p>
-                                    <p className='fuente text-right'>If you have any questions, please get in touch: bookstore@gmail.com</p>
+                                    <p className='mb-3 fuente'><span className='subrayado'>Total</span>: US$ {order.total}</p>
+                                    <p className='mb-4 fuente'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <p className='text-right fuente'>If you have any questions, please get in touch: <span className='contact__p'>bookstore@gmail.com</span></p>
                                 </div>
                                 :
                                 <div className='my-4'>
-                                    <p className='fuente'>There has been an error with your purchase. Please get in touch: bookstore@gmail.com </p> 
+                                    <p className='mb-3 fuente'>There has been an error with your purchase. Please get in touch: bookstore@gmail.com </p> 
                                     <p className='fuente'>{err}</p>
                                 </div>
                             }

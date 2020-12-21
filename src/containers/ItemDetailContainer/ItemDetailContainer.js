@@ -23,9 +23,9 @@ function ItemDetailContainer() {
             : 
             book === 'Not Found' ? 
             <>
-                <h3 className='fuente my-4'>The requested book doesn't exists</h3> 
+                <h3 className='my-4 fuente'>The requested book doesn't exists</h3> 
                 <NavLink to='/browseShelfs'>
-                    <button className='botonNextRead mb-3'>Let's find your next read!</button>
+                    <button className='mb-3 botonNextRead'>Let's find your next read!</button>
                 </NavLink>
             </>
             :

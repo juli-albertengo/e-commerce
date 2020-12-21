@@ -10,12 +10,11 @@ $fuente: 'Roboto Mono', monospace;
     @extend .align-items-center;
     @extend .justify-content-around;
     background-color: $negro;
+    @extend .px-2;
 
     .footer__p{
         font-family: $fuente;
         color: $blanco;
-        font-size: 1rem;
-        @extend .px-2;
 
         .footer__p__a{
             @extend .footer__p;

@@ -8,39 +8,63 @@ $rojo: #d62828;
 $amarillo: #F2A71A;
 $fuente: 'Roboto Mono', monospace;
 
-
-.bajada{
-    font-family: $fuente;
+.fuente{
+    font-family: $fuente;  
 }
 
-.titulo{
-    font-family: $fuente;
+@media(max-width: 425px){
+    .coolTitle{
+        display: none;
+    }
 }
 
-.boton{
+.botonNextRead{
     @extend .btn;
     @extend .btn-outline-warning;
     font-family: $fuente;
 }
-.boton:hover{
-    color: $blanco;
+
+.botonNextRead:hover{
+    color: $blanco !important;
     background-color: $amarillo;
 }
 
 .features{
     background-color: $gris;
-    height: 5rem;
-    @extend .align-items-center;
-
-    .features__p{
-        font-family: $fuente;
-        @extend .text-center;
-    }
+    min-height: 4rem;
 }
 
 .contact__p{
-    @extend .my-2;
     font-family: $fuente;
     text-decoration: underline;
     cursor: pointer;
+}
+
+.eventCard{
+    @extend .m-3;
+    @extend .col-lg-5;
+
+    .eventCard__title{
+        @extend .col-lg-12;
+        font-family: $fuente;
+    }
+
+    .eventCard__details{
+        @extend .row;
+
+        .eventCard__details__divImg{
+            @extend .m-0;
+            @extend .p-0;
+            @extend .col-lg-3;
+
+            .author__img{
+                @extend .mx-2;
+                @extend .img-thumbnail;
+            }
+        }
+        .eventCard__p{
+            @extend .col-lg-6;
+            font-family: $fuente;
+        }
+    }
 }

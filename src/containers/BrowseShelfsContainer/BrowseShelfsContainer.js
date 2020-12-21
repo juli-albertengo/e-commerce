@@ -13,22 +13,22 @@ function BrowseShelfs(){
     const [books, loading] = useFetchAllBooks([])
 
     return(
-        <> 
-        <CategoriesNav/>
-        
-        {loading ?
-            <Loading /> :
-            books === 'Problem with DB' ?
-            <>
-                <p>There has been a problem laoding the books, please come back later</p>
-            </>
-            :
-            <>
-                <h2 className="container__p">All Books</h2>
-                <BookList products={books}/>
-            </> 
-        }
-        </>   
+        <div className='container-lg'> 
+            <CategoriesNav/>
+            
+            {loading ?
+                <Loading /> :
+                books === 'Problem with DB' ?
+                <>
+                    <p className='problemDB'>There has been a problem laoding the books, please come back later</p>
+                </>
+                :
+                <>
+                    <h2 className="fuente">All Books</h2>
+                    <BookList products={books}/>
+                </> 
+            }
+        </div>   
     )
 }
 

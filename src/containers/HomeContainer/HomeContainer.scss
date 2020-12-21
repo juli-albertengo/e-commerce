@@ -8,22 +8,27 @@ $rojo: #d62828;
 $amarillo: #F2A71A;
 $fuente: 'Roboto Mono', monospace;
 
-.categories{
-    font-family: $fuente;
-    text-decoration: underline;
-    color: $negro;
-    font-size: 1.2rem;
-}
-
-.categories:hover{
-    font-family: $fuente;
-    text-decoration: underline;
-    color: $negro;
-    font-size: 1.2rem;
-}
-
 .problemDB{
     font-family: $fuente;
     font-size: 1.2rem;
 }
+
+.fuente{
+    font-family: $fuente;
+}
+
+@media(max-width: 425px){
+    .author__img{
+        display: none;
+    }
+}
+
+@media(min-width: 768px){
+    .author__img{
+        width: 250px;
+        height: 300px;
+    }
+}
+
+
 

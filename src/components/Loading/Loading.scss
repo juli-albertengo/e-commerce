@@ -8,15 +8,14 @@ $rojo: #d62828;
 $fuente: 'Roboto Mono', monospace;
 
 .loadingDiv{
-    @extend .container-fluid;
     @extend .text-center;
     height: 10rem;
 
     .loadingDiv__text{
         @extend .my-3;
         @extend .text-center;
-        font-family: $fuente;
         @extend .text-secondary;
+        font-family: $fuente;
         font-size: 3rem;
     }
 

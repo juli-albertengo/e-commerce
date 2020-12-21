@@ -3,10 +3,36 @@
 
 $negro: #282828;
 $blanco: #fcfcfc;
+$gris: #DADCE0;
+$rojo: #d62828;
+$amarillo: #F2A71A;
+$verde: #198754;
 $fuente: 'Roboto Mono', monospace;
 
 .cart__heading{
-    font-family: $fuente;
     @extend .my-3;
+    font-family: $fuente;
+    text-decoration: underline;
+}
+
+.botonProcess{
+    @extend .btn;
+    @extend .btn-outline-success;
+    font-family: $fuente;
+}
+
+.botonProcess:hover{
+    color: $blanco !important;
+    background-color: $verde;
+}
+
+.cartItem__img{
+    min-height: 200px;
+    min-width: 140px;
+    max-height: 200px;
+    max-width: 140px;
+}
+
+.total{
     text-decoration: underline;
 }

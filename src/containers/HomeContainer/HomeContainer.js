@@ -1,6 +1,8 @@
+//Estilos
+import './HomeContainer.scss'
+
 //Components
 import BookList from "../../components/BookList/BookList";
-import UpcomingEvents from "../../components/UpcomingEvents/UpcomingEvents"
 import Loading from "../../components/Loading/Loading"
 
 //CustomHooks
@@ -10,21 +12,20 @@ function Home() {
    const [books, loading] = useFetchAllBooks([]);
 
     return (
-        <>
+        <div className='container-lg'>
             {loading ? 
             <Loading /> : 
             books === 'Problem with DB' ?
             <>
-                <p>There has been a problem laoding the books, please come back later</p>
+                <p className='problemDB'>There has been a problem laoding the books, please come back later</p>
             </> 
             :
             <>
-                <h2 className="container__p">Latest 2020!</h2>
+                <h2 className="mt-4 mb-3 fuente">Latest 2020!</h2>
                 <BookList products={books}/>
             </>
             }     
-            <UpcomingEvents />
-        </>
+        </div>
     );
 }
 

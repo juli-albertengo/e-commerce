@@ -1,5 +1,5 @@
 //Estilos
-//import './BrowseShelfsContainer.scss'
+import '../BrowseShelfsContainer/BrowseShelfsContainer.scss'
 
 //Components
 import FilteredBookList from "../../components/FilteredBookList/FilteredBookList"; 
@@ -38,21 +38,22 @@ function BrowseShelfs(){
     const [books, loading] = useFetchSomeBooks([], 'genreId', parseURL(genreId));
     
     return(
-        <> 
-        <CategoriesNav/>
-        {loading ?
-            <Loading /> :
-            books === [] ?
-            <>
-                <p>There are no books in this genre</p>
-            </>
-            :
-            <>
-                <Genre genreId={genreId} />
-                <FilteredBookList products={books}/>
-            </> 
-        }
-        </>   
+        <div className='container-lg'> 
+            <CategoriesNav/>
+
+            {loading ?
+                <Loading /> :
+                books === [] ?
+                <>
+                    <p className='problemDB'>There are no books in this genre</p>
+                </>
+                :
+                <>
+                    <Genre genreId={genreId} />
+                    <FilteredBookList products={books}/>
+                </> 
+            }
+        </div>   
     )
 }
 

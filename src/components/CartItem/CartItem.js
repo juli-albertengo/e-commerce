@@ -1,5 +1,5 @@
 //Estilos
-import './CartItem.scss';
+import '../../containers/CartContainer/CartContainer.scss'
 
 //Componentes
 import ItemCounter from '../ItemCounter/ItemCounter';
@@ -22,19 +22,19 @@ function CartItem({purchase}){
     let totalPorLibro = purchase.units * purchase.price;
 
     return(
-        <div className='container-fluid'>
-            <div className='row'>
-                <div className='col-lg-2'>
-                    <img src={purchase.img} className='img-fluid' alt='Book_Cover'/>
-                </div>
-                <div className='col-lg-6'>
-                    <h4 className='bajada'>{purchase.book}</h4>
-                    <p className='bajada'>by {purchase.author}</p>
-                    <p className='bajada'>Price: ${purchase.price} USD</p>
+        <div className='row'>
+            <div className='col-lg-4 col-md-4 col-sm-12 text-center mb-3'>
+                <img src={purchase.img} className='cartItem__img' alt='Book_Cover'/>
+            </div>
+            <div className='col-lg-6 col-md-6 col-sm-12'>
+                <h4 className='fuente'>{purchase.book}</h4>
+                <p className='fuente'>by {purchase.author}</p>
+                <p className='fuente mb-4'>Price: US${purchase.price}</p>
+                <div className='d-flex align-items-center mb-3'>
                     <ItemCounter min="1" max="10" initialValue={purchase.units} onAdd={agregarUnidades}/>
-                    <p className='bajada'>Total: ${totalPorLibro} USD</p>
-                    <button onClick={() => {removerCompra(purchase.book)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
+                    <p className='fuente my-0 ml-3'><span className='total'>Total</span>: US${totalPorLibro}</p>
                 </div>
+                <button onClick={() => {removerCompra(purchase.book)}} className='btn btn-sm btn-outline-danger mb-5'>Remove from Cart</button>
             </div>
         </div>
     )

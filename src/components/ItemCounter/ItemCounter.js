@@ -1,6 +1,3 @@
-//Estilos
-import "./ItemCounter.scss"
-
 //State
 import {useState} from 'react'
 
@@ -24,10 +21,10 @@ function ItemCounter({min, max, onAdd, initialValue}) {
 
     return (
     <>
-    <div className='counterDiv'>
-         <button id="restar" onClick={substractToCount} className='counter__boton'>-</button>
-            <p className='counter__p bajada'>{counter}</p>
-        <button id="agregar" onClick={addToCount} className="counter__boton">+</button>
+    <div className='d-flex align-items-center'>
+         <button id="restar" onClick={substractToCount} className='btn btn-outline-info btn-sm mx-2'>-</button>
+            <p className='fuente m-0 mx-1'>{counter}</p>
+        <button id="agregar" onClick={addToCount} className="btn btn-outline-info btn-sm mx-2">+</button>
     </div>
     </>
     );

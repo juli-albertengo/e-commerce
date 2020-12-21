@@ -26,12 +26,28 @@ function PlaceOrderContainer(){
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
     const [sameEmails, setSameEmails] = useState(false);
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
 
     //Proceso de compra
     const [id, setId] = useState('');
     const [err, setErr] = useState('');
     const [loading, setLoading] = useState(false);
     const [processed, setProcessed] = useState(false);
+    const [order, setOrder] = useState({})
+
+    const handleName = (e) => {
+        setName(e.target.value);
+    }
+
+    const handleLastName = (e) => {
+        setLastName(e.target.value);
+    }
+
+    const handlePhone = (e) => {
+        setPhone(e.target.value);
+    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value);
@@ -79,6 +95,7 @@ function PlaceOrderContainer(){
             buyersLastName.value = '';
             buyersPhone.value = '';
             buyersEmail.value = '';
+            setOrder(newOrder);
             cleanCart()
             setProcessed(true);
             setLoading(false);
@@ -86,13 +103,13 @@ function PlaceOrderContainer(){
     }
 
     return(
-        <>
+        <div className='container-lg'>
         {/*Si el carrito esta vacio y la compra aun no esta procesada, mostrar boton para que vaya a comparar libros */}
         {cart.length === 0 && !processed ? 
                             <div className='mb-4'>
-                                <p className='bajada'>You haven't selected any item yet!</p>
+                                <p className='fuente mt-3'>You haven't selected any item yet!</p>
                                 <NavLink to='/browseShelfs'>
-                                    <button className='ml-5 boton'>Let's find your next read</button>
+                                    <button className='ml-md-5 botonNextRead'>Let's find your next read</button>
                                 </NavLink>
                             </div>
                             :
@@ -101,38 +118,43 @@ function PlaceOrderContainer(){
                                 <div className='container-fluid'>
                                     <h2 className='cart__heading'>Place my Order</h2>
                                     {cart.map((purchase, index) => {
-                                        return <p key={index}>{purchase.book}</p>
+                                        return(
+                                            <p className='fuente' key={index}>- {purchase.book} ({purchase.units} u.)</p>
+                                        ) 
                                     })}
-                                    <form onSubmit={processPurchase} id='buyerForm' className='row'>
-                                        <div className='col form-group'>
-                                            <label htmlFor='name'>Name: </label>
-                                            <input className='form-control' type='text' id='name' name='name' required/>
+                                    <h4 className='my-3 fuente'><span className='total'>Total Amount</span>: ${getCartTotal(cart)}</h4>
+                                    <p className='fuente mb-4'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <NavLink to='/myCart'>
+                                        <button className='botonNextRead'>Change my order</button>
+                                    </NavLink>
+                                    <form onSubmit={processPurchase} id='buyerForm' className='my-4 row'>
+                                        <div className='col-md-4 col-sm-12 form-group'>
+                                            <label htmlFor='name' className='fuente'>Name: </label>
+                                            <input className='form-control' onInput={handleName} value={name} type='text' id='name' name='name' required/>
                                         </div>
-                                        <div className=' col form-group'>
-                                            <label htmlFor='lastName'>Last Name: </label>
-                                            <input className='form-control' type='text' id='lastName' name='lastName' required/>
+                                        <div className='col-md-4 col-sm-12 form-group'>
+                                            <label htmlFor='lastName' className='fuente'>Last Name: </label>
+                                            <input className='form-control' onInput={handleLastName} value={lastName} type='text' id='lastName' name='lastName' required/>
                                         </div>
-                                        <div className=' col form-group'>
-                                            <label htmlFor='phone'>Phone: </label>
-                                            <input className='form-control' type='number' id='phone' name='phone' required/>
+                                        <div className='col-md-4 col-sm-12 form-group'>
+                                            <label htmlFor='phone' className='fuente'>Phone: </label>
+                                            <input className='form-control' onInput={handlePhone} value={phone} type='number' id='phone' name='phone' required/>
                                         </div>
-                                        <div className=' col form-group'>
-                                            <label htmlFor='email'>Email: </label>
+                                        <div className='col-md-6 col-sm-12 form-group'>
+                                            <label htmlFor='email' className='fuente'>Email: </label>
                                             <input className='form-control' onInput={handleEmail} value={email} type='email' id='email' name='email' required/>
                                         </div>
-                                        <div className=' col form-group'>
-                                            <label htmlFor='confirmEmail'>Confirm Email: </label>
+                                        <div className='col-md-6 col-sm-12 form-group'>
+                                            <label htmlFor='confirmEmail' className='fuente'>Confirm Email: </label>
                                             <input className='form-control' onInput={handleConfirmEmail} value={confirmEmail} type='email' id='confirmEmail' name='confirmEmail' required/>
                                         </div>
-                                        <h4 className='bajada'>Total Amount: ${getCartTotal(cart)}</h4>
-
                                         {/* Chequear la validez de los mails antes de habilitar el boton para realizar compra */}
-                                        {sameEmails ? 
-                                            <button type='submit'>Place my order</button>
+                                        {sameEmails && name !== '' && lastName !== '' && phone !== '' ? 
+                                            <button className='botonProcess my-4 ml-auto' type='submit'>Place my order</button>
                                         : 
                                         <>
-                                            <p>Please check that your email is the same in both inputs</p>
-                                            <button type='submit' disabled>Place my order</button>
+                                            <p className='my-3 fuente ml-2 mr-4'>Please complete all required fields and check that your email is the same in both inputs</p>
+                                            <button className='botonProcess ml-auto' type='submit' disabled>Place my order</button>
                                         </>
                                         }
                                     </form>
@@ -144,13 +166,25 @@ function PlaceOrderContainer(){
                                 <Loading/> 
                                 :
                                 id ? 
-                                    <p>Your purchase hase been procesed {id}</p> 
-                                    :
-                                    <p>{err}</p>
+                                <div className='my-4'>
+                                    <h3 className='cart__heading'>Your purchase has been procesed! </h3> 
+                                    <h5 className='fuente mb-4'>Here is your purchase ID: {id}</h5>
+                                    {order.products.cart.map((item, index) => {
+                                        return <p className='fuente' key={index}>- {item.book}</p>
+                                    })}
+                                    <p className='fuente mb-3'><span className='total'>Total</span>: US$ {order.total}</p>
+                                    <p className='fuente mb-4'>You'll receive an email in the next 24hs with the delivery details!</p>
+                                    <p className='fuente text-right'>If you have any questions, please get in touch: bookstore@gmail.com</p>
+                                </div>
+                                :
+                                <div className='my-4'>
+                                    <p className='fuente'>There has been an error with your purchase. Please get in touch: bookstore@gmail.com </p> 
+                                    <p className='fuente'>{err}</p>
+                                </div>
                             }
                             </>                 
         }
-        </>
+        </div>
     )
 }
 

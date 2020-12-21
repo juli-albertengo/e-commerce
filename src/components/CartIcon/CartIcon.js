@@ -1,6 +1,5 @@
 //Estilos
 import "../Navbar/Navbar.scss";
-import './CartIcon.scss';
 
 //Context
 import {useAppContext} from '../../context/useAppContext'

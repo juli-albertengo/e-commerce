@@ -1,60 +1,92 @@
-//Estilos
-//import "./Genre.scss";
-
 //Componente renderizado por Item Detail y en Browse Shelfs para el titulo de cada categoria
 function Genre({ genreId }) {
   switch (genreId) {
     case 'Memoirs':
+      return (
+        <>
+          <h2 className='fuente'>Memoirs</h2>
+        </>
+      );
     case '1':
       return (
         <>
-          <p className='moreInfo__p'>Memoirs</p>
+          <p className='fuente'>Memoirs</p>
         </>
       );
     case 'Novels':
+      return (
+        <>
+          <h2 className='fuente'>Novels</h2>
+        </>
+      );
     case '2':
       return (
         <>
-          <p className='moreInfo__p'>Novels</p>
+          <p className='fuente'>Novels</p>
         </>
       );
     case 'Non-Fiction':
+      return (
+        <>
+          <h2 className='fuente'>Non-Fiction</h2>
+        </>
+      );
     case '3':
       return (
         <>
-          <p className='moreInfo__p'>Non-Fiction</p>
+          <p className='fuente'>Non-Fiction</p>
         </>
       );
     case 'Kids':
+      return (
+        <>
+          <h2 className='fuente'>Books for Kids</h2>
+        </>
+      )
     case '4':
         return (
           <>
-            <p className='moreInfo__p'>Books for Kids</p>
+            <p className='fuente'>Books for Kids</p>
           </>
         )
     case 'Young-Adult':
+      return (
+        <>
+          <h2 className='fuente'>Young Adult</h2>
+        </>
+      );
     case '5':
       return (
         <>
-          <p className='moreInfo__p'>Young Adult</p>
+          <p className='fuente'>Young Adult</p>
         </>
       );
     case 'Poetry':
+      return (
+        <>
+          <h2 className='fuente'>Poetry</h2>
+        </>
+      );
     case '6':
       return (
         <>
-          <p className='moreInfo__p'>Poetry</p>
+          <p className='fuente'>Poetry</p>
         </>
       );
     case 'GraphicNovels&Comics':
+      return (
+        <>
+          <h2 className='fuente'>Graphic Novels &amp; Comics</h2>
+        </>
+      );
     case '7':
       return (
         <>
-          <p className='moreInfo__p'>Graphic Novels &amp; Comics</p>
+          <p className='fuente'>Graphic Novels &amp; Comics</p>
         </>
       );
     default: 
-      return(<p>Category not found</p>);
+      return(<p className='fuente'>Category not found</p>);
   }
 }
 

@@ -1,6 +1,3 @@
-//Estilos
-//import "./Stars.scss";
-
 //Recursos
 import star from "./star.png";
 

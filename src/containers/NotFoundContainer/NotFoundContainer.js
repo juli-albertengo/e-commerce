@@ -1,7 +1,3 @@
-//Estilos
-
-//Recursos
-
 //NavLink
 import {NavLink} from 'react-router-dom';
 
@@ -9,10 +5,10 @@ import {NavLink} from 'react-router-dom';
 function NotFoundContainer(){
 
     return(
-        <div className='container-fluid'>
-            <p>There's nothing to see here!</p>
+        <div className='container-lg'>
+            <h2 className='my-3'>There's nothing to see here!</h2>
             <NavLink to={'/'}>
-                <button>Let's find your next read!</button>
+                <button className='my-3 botonNextRead'>Let's find your next read!</button>
             </NavLink>
         </div>
 

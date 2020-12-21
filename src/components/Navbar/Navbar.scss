@@ -39,6 +39,14 @@ $fuente: 'Roboto Mono', monospace;
             text-decoration: underline;
         }
     }
+
+    .cartNumber{
+        font-size: 0.9rem;
+        @extend .p-1;
+    }
 }
+
+
+
 
 
